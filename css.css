@@ -237,7 +237,7 @@
   height: 32px;
   margin: 0;
 }
-.content-register form button {
+.content-register form .submit {
   max-width: 316px;
   padding: 0;
   background-color: transparent;
@@ -317,36 +317,7 @@ img#bot-flower {
   display: block;
   margin: 1rem auto 100px;
 }
-/*  */
-.content-lose {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-.content-lose img#title {
-  max-width: 556px;
-  margin-top: 320px;
-  position: relative;
-  left: 1px;
-}
-.content-lose .follow{
-  font-size: 26px;
-  line-height: 30px;
-  font-weight: bold;
-  font-family: BemboBold;
-  font-style: italic;
-  margin-top: 40px;
-}
-.content-lose #right{
-  color: #000;
-  margin: 120px 0;
-  max-width: 380px;
-}
-.content-lose #put{
-  max-width: 400px;
-}
+
 /*  */
 .content-before{
   position: absolute;
@@ -420,31 +391,36 @@ img#explosion {
   z-index: 1;
 }
 /*  */
-.content-after{
+.content-win{
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
-.content-after img#text1 {
+.content-win img#text1 {
   max-width: 540px;
   display: block;
   margin: 260px auto 0;
+  animation: winText1 1s ease-out forwards;
+  z-index: 3;
+  position: relative;
 }
-.content-after .enter-code{
+.content-win .enter-code{
   position: relative;
   margin: 150px auto 0;
   max-width: 460px;
+  animation: winAni2 0.5s ease-in forwards;
+  z-index: 3;
 }
-.content-after .enter-code input{
+.content-win .enter-code input{
   position: absolute;
   max-width: 300px;
   top: 46px;
   left: 50%;
   transform: translateX(-50%);
   line-height: 50px;
-  padding: 0 20px;
+  padding: 0;
   background-color: transparent;
   color: #000;
   font-size: 25px;
@@ -455,7 +431,7 @@ img#explosion {
   font-family: BemboBold;
   text-align: center;
 }
-.content-after .enter-code input::placeholder{
+.content-win .enter-code input::placeholder{
   color: #000;
   font-size: 25px;
   font-style: italic;
@@ -465,16 +441,97 @@ img#explosion {
   font-family: BemboBold;
   text-align: center;
 }
-.content-after .enter-code input:focus{
+.content-win .enter-code input:focus{
   outline: none;
 }
-.content-after img#text2 {
+.content-win img#text2 {
   max-width: 465px;
   margin: 1.125rem auto 0;
   display: block;
+  animation: winAni2 0.5s ease-in forwards;
+  z-index: 2;
+  position: relative;
+}
+.content-win img#hendrick{
+  animation: winAni3 0.5s linear forwards;
+  position: relative;
+  z-index: 2;
+}
+.content-win .icon-win {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  animation: winIcon 2s ease both;
+}
+.icon-win img.ic1 {
+  width: 14rem;
+  position: relative;
+  left: 2.5rem;
+  top: 2rem;
+}
+.icon-win img.ic2 {
+  width: 255px;
+  position: absolute;
+  right: 2rem;
+  top: 0;
+}
+.icon-win img.ic3 {
+  position: absolute;
+  left: 4.5rem;
+  max-width: 235px;
+  top: 22rem;
+}
+.icon-win img.ic4 {
+  position: absolute;
+  right: 1rem;
+  top: 22rem;
+  max-width: 260px;
+}
+.icon-win img.ic5 {
+  max-width: 280px;
+  position: absolute;
+  top: 48rem;
+  right: 0;
+}
+/* Lose */
+.content-lose {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.content-lose img#title {
+  max-width: 556px;
+  margin-top: 320px;
+  position: relative;
+  left: 1px;
+  animation: loseAni1 0.5s linear forwards;
+}
+.content-lose .follow{
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: BemboBold;
+  font-style: italic;
+  margin-top: 40px;
+  animation: loseAni2 0.2s linear forwards;
+}
+.content-lose #right{
+  color: #000;
+  margin: 120px 0;
+  max-width: 380px;
+  animation: loseAni3 0.6s linear forwards;
+}
+.content-lose #put{
+  max-width: 400px;
+  animation: loseAni4 0.5s linear forwards;
 }
 /* end style */
-@-webkit-keyframes SunAnimation {
+@keyframes SunAnimation {
   from {
     -webkit-transform: scale(0.4);
     opacity: 0;
@@ -485,7 +542,7 @@ img#explosion {
   }
 }
 
-@-webkit-keyframes Explosion2Animation {
+@keyframes Explosion2Animation {
   from {
     -webkit-transform: rotate(0deg) scale(0.5) skew(0deg) rotate(-20deg) translate(-30%); 
     opacity: 0.7;
@@ -496,18 +553,107 @@ img#explosion {
   }
 }
 
-/* @-webkit-keyframes cssAnimation1 {
-  from {
-    -webkit-transform: rotate(0deg) scale(0.4) skew(0deg) translate(20px);
-    opacity: 0.2;
+
+/* win */
+@keyframes winText1 {
+  0% {
+    transform: scale(0.1); 
+    opacity: 0.5;
   }
-  to {
-    -webkit-transform: rotate(0deg) scale(1.2) skew(0deg) translate(20px);
-    opacity: 1;
+  80% {
+    transform: scale(1.1);
   }
-  to {
-    -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(20px);
-    opacity: 0;
+  100% {
+    transform: scale(1);
   }
 }
-}  */
+@keyframes winAni2 {
+  0% {
+    transform: scale(1.2); 
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes winAni3 {
+  0% {
+    transform: translateX(-120px); 
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes winIcon {
+  0% {
+    transform: scale(0.1); 
+    opacity: 0.6;
+    animation-duration: 0.5s;
+  }
+  40% {
+    transform: scale(1); 
+    opacity: 1;
+    animation-duration: 3s;
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+/* lose */
+@keyframes loseAni1 {
+  0% {
+    transform: translateY(50px) scale(0.4); 
+    opacity: 0.7;
+  }
+  60% {
+    transform: translateY(-30px) scale(1.1); 
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1); 
+    opacity: 1;
+  }
+}
+@keyframes loseAni2 {
+  0% {
+    transform: scale(0.2); 
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+@keyframes loseAni3 {
+  0% {
+    transform: translateX(30px) scale(0.4); 
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateX(-200px) scale(1.1); 
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) scale(1); 
+    opacity: 1;
+  }
+}
+@keyframes loseAni4 {
+  0% {
+    transform: translateY(-50px) scale(0.4); 
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(50px) scale(1.2); 
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1); 
+    opacity: 1;
+  }
+}
+/*  */
+
