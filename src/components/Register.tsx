@@ -3,14 +3,13 @@ import React from 'react';
 function Register({ submit }: any) {
     return (
         <div className="row-bg">
-            <img src="./images/register/bg.png" />
-
+            <img alt="bg" src="./images/register/bg.png" />
             <div className="content-register">
-                <img id="logo" src="./images/home/logo.png" />
-                <img id="hohoho" src="./images/register/hohoho.png" />
+                <img id="logo" alt="logo" src="./images/home/logo.png" />
+                <img id="hohoho" alt="hohoho" src="./images/register/hohoho.png" />
                 <p className="you-must">You must be of legal drinking age to play.<br />
-          Kindly fill in this form.
-        </p>
+                    Kindly fill in this form.
+                </p>
                 <form>
                     <div className="form-item position-relative">
                         <label htmlFor="first-name">First Name</label>
@@ -34,18 +33,18 @@ function Register({ submit }: any) {
                     </div>
                     <p>
                         By registering, you declare that you are minimally<br />
-            18 years old and are of legal drinking age in Singapore.
-          </p>
+                        18 years old and are of legal drinking age in Singapore.
+                    </p>
                     <div className="checkbox d-flex justify-content-start align-items-start position-relative">
-                        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox"  />
+                        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
                         <label htmlFor="checkbox">
                             By providing your contact details, you consent to our<br />
-              Terms and Conditions and Privacy Policy and agree<br />
-              to receive marketing updates. You can unsubscribe at<br />
-              any time.
-            </label>
+                            Terms and Conditions and Privacy Policy and agree<br />
+                            to receive marketing updates. You can unsubscribe at<br />
+                            any time.
+                        </label>
                     </div>
-                    <a className="submit" onClick={submit} ><img id="submit" src="./images/register/submit.png" /></a>
+                    <a className="submit" onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
                 </form>
             </div>
         </div>

@@ -387,7 +387,7 @@ img#explosion {
   width: 95%;
   position: absolute;
   left: 24px;
-  bottom: 485px;
+  bottom: 25%;
   z-index: 1;
 }
 /*  */
@@ -467,15 +467,15 @@ img#explosion {
   animation: winIcon 2s ease both;
 }
 .icon-win img.ic1 {
-  width: 14rem;
+  max-width: 30%;
   position: relative;
-  left: 2.5rem;
-  top: 2rem;
+  left: 6%;
+  top: -1%;
 }
 .icon-win img.ic2 {
-  width: 255px;
+  width: 35%;
   position: absolute;
-  right: 2rem;
+  right: 12%;
   top: 0;
 }
 .icon-win img.ic3 {
@@ -509,7 +509,7 @@ img#explosion {
   margin-top: 320px;
   position: relative;
   left: 1px;
-  animation: loseAni1 0.5s linear forwards;
+  /* animation: loseAni1 0.5s linear forwards; */
 }
 .content-lose .follow {
   font-size: 26px;
@@ -666,52 +666,102 @@ img#explosion {
 
 @media only screen and (max-width: 450px) {
   .content-register img#logo {
-    max-width: 150px;
-    margin-top: 65px;
+    max-width: 40%;
+    margin-top: 35px;
   }
   .content-register img#hohoho{
-    max-width: 366px;
-    margin-top: 32px;
+    max-width: 75%;
+    margin-top: 25px;
   }
   .content-register .you-must{
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 18px;
   }
   .content-register form .form-item{
-    max-width: 316px;
+    max-width: 82%;
   }
   .content-register form input{
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 1rem;
     width: 100%;
-    line-height: 56px;
-    margin-bottom: 24px;
-    font-size: 18px;
-    height: 56px;
   }
   .content-register form input::placeholder{
-    font-size: 18px;
+    font-size: 14px;
   }
   .content-register form label:has(+ input:focus){
-    font-size: 12px;
+    font-size: 10px;
   }
   .content-register form p{
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 11px;
+    line-height: 16px;
   }
   .checkbox{
-    max-width: 335px;
+    max-width: 86%;
   }
   .checkbox label{
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 10px;
+    line-height: 16px;
     margin-bottom: 0;
+    padding-left: 0.5rem;
   }
   .checkbox input#checkbox {
     width: 23px;
     height: 23px;
   }
   .content-register form .submit{
-    margin-top: 26px;
     margin-bottom: 0;
+    margin-top: 1.25rem;
+    max-width: 50%;
   }
+  .content-win img#text1 {
+    max-width: 90%;
+    margin: 45% auto 0;
+  }
+  .content-win .enter-code{
+    margin: 13% auto 0;
+    max-width: 75%;
+  }
+  .content-win .enter-code input{
+    top: 38%;
+    font-size: 12px;
+    line-height: 20px;
+    max-width: 180px;
+  }
+  .content-win .enter-code input::placeholder {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .content-win img#text2{
+    max-width: 82%;
+  }
+  .icon-win img.ic1 {
+    max-width: 30%;
+    left: 6%;
+    top: -1%;
+  }
+  .icon-win img.ic2 {
+    width: 35%;
+    right: 12%;
+    top: 0;
+  }
+  .icon-win img.ic3 {
+    left: 12%;
+    max-width: 28%;
+    top: 22%;
+  }
+  .icon-win img.ic4 {
+    right: 8%;
+    top: 24%;
+    max-width: 28%;
+  }
+  .icon-win img.ic5 {
+    max-width: 42%;
+    top: 52%;
+    right: 2%;
+  }
+
+
 
 }
