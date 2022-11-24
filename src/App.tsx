@@ -4,6 +4,7 @@ import Game from './components/Game';
 import Register from './components/Register';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { drawAPI, submitAPI } from './api';
 const imgs = [
   './images/game/cracked-bot.png',
   './images/game/mechanism.png',
@@ -31,6 +32,8 @@ const imgs = [
 ]
 function App() {
   const [step, setStep] = useState('REGISTER');
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
     setStep(newStep)
   }
@@ -44,10 +47,26 @@ function App() {
   useEffect(() => {
     cacheImages()
   }, [])
+  const onRegister = async (values: any) => {
+    try {
+      if (loading) return
+      setLoading(true);
+      console.log('values', values);
+      const newUser = await submitAPI(values)
+      const { played, player, status } = newUser
+      const result = await drawAPI(player);
+      setResult(result)
+      setLoading(false)
+      changeStep('GAME')
+    } catch (error) {
+      setLoading(false)
+    }
+
+  }
   return (
     <>
-      {step == 'GAME' && <Game />}
-      {step == 'REGISTER' && <Register submit={() => changeStep('GAME')} />}
+      {step == 'GAME' && <Game result={result} />}
+      {step == 'REGISTER' && <Register onRegister={onRegister} />}
       <ToastContainer />
     </>
   );

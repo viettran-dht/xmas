@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import InputMask from 'react-input-mask';
 const initForm = {
     firstName: '',
     lastName: '',
@@ -7,12 +8,30 @@ const initForm = {
     dob: '',
     email: ''
 }
-function Register({ submit }: any) {
-    const [form, setForm] = useState(initForm)
+function Register({ onRegister }: any) {
+    const [form, setForm] = useState<any>(initForm)
     useEffect(() => {
-        toast("Wow so easy!")
+
 
     }, [])
+    const setFormValue = (field: string) => (e: any) => {
+        const newForm = { ...form, [field]: e.target.value }
+        setForm(newForm)
+    }
+    const submit = () => {
+        const values = {
+            ...form,
+            phone: form.phone.replace(/_/g, ''),
+            dob: form.dob.replace(/_/g, '')
+        }
+        for (const key in values) {
+            if (!values[key]) {
+                toast("Please type all input");
+                return
+            }
+        }
+        onRegister(values)
+    }
     return (
         <div className="row-bg">
             <img alt="bg" src="./images/register/bg.png" />
@@ -24,24 +43,24 @@ function Register({ submit }: any) {
                 </p>
                 <form>
                     <div className="form-item position-relative">
-                        <label htmlFor="first-name">First Name</label>
-                        <input type="text" value={form.firstName} id="first-name" placeholder="First Name" />
+                        {/* <label htmlFor="first-name">First Name</label> */}
+                        <input type="text" value={form.firstName} onChange={setFormValue('firstName')} id="first-name" placeholder="First Name" />
                     </div>
                     <div className="form-item position-relative">
-                        <label htmlFor="last-name">Last Name</label>
-                        <input type="text" value={form.lastName} id="last-name" placeholder="Last Name" />
+                        {/* <label htmlFor="last-name">Last Name</label> */}
+                        <input type="text" value={form.lastName} onChange={setFormValue('lastName')} id="last-name" placeholder="Last Name" />
                     </div>
                     <div className="form-item position-relative">
-                        <label htmlFor="mobile">Mobile no.</label>
-                        <input type="text" value={form.phone} id="mobile" placeholder="Mobile no." />
+                        <InputMask mask="99999999999" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." maskPlaceholder="." />
                     </div>
                     <div className="form-item position-relative">
-                        <label htmlFor="date-of-birth">Date of birth</label>
-                        <input type="text" value={form.dob} id="date-of-birth" placeholder="Date of birth" />
+                        {/* <label htmlFor="date-of-birth">Date of birth</label> */}
+                        {/* <input type="text" value={form.dob} id="date-of-birth" placeholder="Date of birth" /> */}
+                        <InputMask mask="99/99/9999" value={form.dob} onChange={setFormValue('dob')} placeholder="Date of birth" maskPlaceholder="-" />
                     </div>
                     <div className="form-item position-relative">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" value={form.email} id="email" placeholder="Email" />
+                        {/* <label htmlFor="email">Email</label> */}
+                        <input type="email" value={form.email} onChange={setFormValue('email')} id="email" placeholder="Email" />
                     </div>
                     <p>
                         By registering, you declare that you are minimally<br />

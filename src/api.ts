@@ -6,16 +6,16 @@ const client = axios.create({
     timeout: 100000,
 });
 
-export const submit = (request: {
+export const submitAPI = (request: {
     firstName: string;
     lastName: string;
     email: string;
     phone: string;
     dob: string;
 }) => {
-    return client.post('/xmas/submit', request)
+    return client.post('/xmas/submit', request).then(res => res.data.data)
 }
 
-export const draw = (clientId: string) => {
-    return client.post(`xmas/${clientId}/lucky-draw`)
+export const drawAPI = (clientId: string) => {
+    return client.get(`xmas/${clientId}/lucky-draw`).then(res => res.data.data)
 }

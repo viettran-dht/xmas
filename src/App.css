@@ -164,7 +164,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family:  "BemboBold";
+  font-family: "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 18px;
@@ -184,14 +184,14 @@
   font-size: 33px;
   font-weight: bold;
   color: #a4873e;
-  font-family:  "BemboBold";
+  font-family: "BemboBold";
   font-style: italic;
 }
 .content-register form input::placeholder {
   font-size: 33px;
   font-weight: bold;
   color: #a4873e;
-  font-family:  "BemboBold";
+  font-family: "BemboBold";
   font-style: italic;
 }
 .content-register form input:focus {
@@ -206,7 +206,7 @@
   opacity: 1;
 }
 .content-register form p {
-  font-family:  "BemboBold";
+  font-family: "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 23px;
@@ -222,7 +222,7 @@
   margin: 1rem auto;
 }
 .checkbox label {
-  font-family:  "BemboBold";
+  font-family: "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 20px;
@@ -542,7 +542,7 @@ img#explosion {
   from {
     display: block;
   }
-  to{
+  to {
     display: none;
     opacity: 0;
   }
@@ -591,7 +591,7 @@ img#explosion {
     font-size: 11px;
     line-height: 16px;
   }
-  .checkbox{
+  .checkbox {
     max-width: 250px;
   }
   .checkbox label {
@@ -669,7 +669,7 @@ img#explosion {
   .content-lose .link-right {
     margin: 22% 0;
   }
-  .content-lose #right{
+  .content-lose #right {
     max-width: 50%;
   }
 }
@@ -680,4 +680,7 @@ img#explosion {
   height: 100%;
   background: #a1a1a194;
   z-index: 111;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }

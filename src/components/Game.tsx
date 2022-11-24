@@ -1,20 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import Draggable from 'react-draggable';
-function Game({ gotoMenu, gotoGame }: any) {
+function Game({ result }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
     const [step, setStep] = useState('START');
     const [showRedeemed, setShowRedeemed] = useState(false)
     const setWinLose = () => {
-        let currentCount = Number(localStorage.getItem('count')) || 0;
-        if (currentCount % 2 == 0) {
+        if (result?.status == 'win') {
             setStep('WIN');
         } else {
             setStep('LOSE');
         }
-        currentCount += 1;
-        localStorage.setItem('count', currentCount.toString());
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
@@ -27,14 +24,14 @@ function Game({ gotoMenu, gotoGame }: any) {
     }
     const closePopup = () => {
         console.log('close popup');
-        
+
         window.parent.postMessage("closePopup", "*")
     }
     return (
         <div className="row-bg">
 
             <img src="./images/background.png" />
-            
+
             <div className="content-before" >
                 {step == 'START' && <div className="game-cracked-group">
                     <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
@@ -68,7 +65,7 @@ function Game({ gotoMenu, gotoGame }: any) {
                         if (e.keyCode == 13) {
                             setShowRedeemed(true)
                         }
-                    }}  placeholder="Unique code here" />
+                    }} placeholder="Unique code here" />
                 </div>
                 <img id="text2" src="./images/win/text2.png" />
                 <img id="hendrick" src="./images/win/hendrick.png" />
@@ -103,11 +100,11 @@ function Game({ gotoMenu, gotoGame }: any) {
             </div>
 
             {step == 'LOSE' && <div className="content-lose">
-                <img id="lose" className="img-gif"  src="./images/lose/lose.gif" />
+                <img id="lose" className="img-gif" src="./images/lose/lose.gif" />
                 <img id="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us at @handricksginsea<br />for more fetive goodness!</p>
-                <a className="link-right" href="./menu.html">
-                    <img id="right" onClick={() => closePopup()}  src="./images/lose/right.png" />
+                <a className="link-right">
+                    <img id="right" onClick={() => closePopup()} src="./images/lose/right.png" />
                 </a>
                 <img id="put" src="./images/lose/put.png" />
             </div>
