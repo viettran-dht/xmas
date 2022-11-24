@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Game from './components/Game';
 import Register from './components/Register';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const imgs = [
   './images/game/cracked-bot.png',
   './images/game/mechanism.png',
@@ -46,6 +48,7 @@ function App() {
     <>
       {step == 'GAME' && <Game />}
       {step == 'REGISTER' && <Register submit={() => changeStep('GAME')} />}
+      <ToastContainer />
     </>
   );
 }

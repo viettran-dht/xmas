@@ -1,6 +1,18 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+const initForm = {
+    firstName: '',
+    lastName: '',
+    phone: '',
+    dob: '',
+    email: ''
+}
 function Register({ submit }: any) {
+    const [form, setForm] = useState(initForm)
+    useEffect(() => {
+        toast("Wow so easy!")
+
+    }, [])
     return (
         <div className="row-bg">
             <img alt="bg" src="./images/register/bg.png" />
@@ -13,23 +25,23 @@ function Register({ submit }: any) {
                 <form>
                     <div className="form-item position-relative">
                         <label htmlFor="first-name">First Name</label>
-                        <input type="text" id="first-name" placeholder="First Name" />
+                        <input type="text" value={form.firstName} id="first-name" placeholder="First Name" />
                     </div>
                     <div className="form-item position-relative">
                         <label htmlFor="last-name">Last Name</label>
-                        <input type="text" id="last-name" placeholder="Last Name" />
+                        <input type="text" value={form.lastName} id="last-name" placeholder="Last Name" />
                     </div>
                     <div className="form-item position-relative">
                         <label htmlFor="mobile">Mobile no.</label>
-                        <input type="text" id="mobile" placeholder="Mobile no." />
+                        <input type="text" value={form.phone} id="mobile" placeholder="Mobile no." />
                     </div>
                     <div className="form-item position-relative">
                         <label htmlFor="date-of-birth">Date of birth</label>
-                        <input type="text" id="date-of-birth" placeholder="Date of birth" />
+                        <input type="text" value={form.dob} id="date-of-birth" placeholder="Date of birth" />
                     </div>
                     <div className="form-item position-relative">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" placeholder="Email" />
+                        <input type="email" value={form.email} id="email" placeholder="Email" />
                     </div>
                     <p>
                         By registering, you declare that you are minimally<br />

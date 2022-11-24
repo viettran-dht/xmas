@@ -25,6 +25,11 @@ function Game({ gotoMenu, gotoGame }: any) {
             }, 2000);
         }
     }
+    const closePopup = () => {
+        console.log('close popup');
+        
+        window.parent.postMessage("closePopup", "*")
+    }
     return (
         <div className="row-bg">
 
@@ -75,7 +80,7 @@ function Game({ gotoMenu, gotoGame }: any) {
                     <img className="ic5" alt="ic5" src="./images/win/ic5.png" />
                 </div>
                 {showRedeemed && <div className="redeemed-backdrop">
-                    <img id="redeemed" alt="redeemed" src="./images/win/redeemed.png" />
+                    <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
                 </div>}
 
             </div>}
@@ -84,7 +89,7 @@ function Game({ gotoMenu, gotoGame }: any) {
                 <img id="title" alt="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us at @handricksginsea<br />for more fetive goodness!</p>
                 <a className="link-right">
-                    <img id="right" alt="right" src="./images/lose/right.png" />
+                    <img id="right" alt="right" onClick={() => closePopup()}  src="./images/lose/right.png" />
                 </a>
 
                 <img id="put" alt="put" src="./images/lose/put.png" />
