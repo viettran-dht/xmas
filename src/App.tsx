@@ -23,7 +23,8 @@ const imgs = [
   "./images/win/ic5.png",
   "./images/lose/title.png",
   "./images/lose/right.png",
-  "./images/lose/put.png"
+  "./images/lose/put.png",
+  "./images/win/redeemed.png"
 
 ]
 function App() {

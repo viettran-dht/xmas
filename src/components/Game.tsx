@@ -5,6 +5,7 @@ function Game({ gotoMenu, gotoGame }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
     const [step, setStep] = useState('START');
+    const [showRedeemed, setShowRedeemed] = useState(false)
     const setWinLose = () => {
         let currentCount = Number(localStorage.getItem('count')) || 0;
         if (currentCount % 2 == 0) {
@@ -58,7 +59,11 @@ function Game({ gotoMenu, gotoGame }: any) {
                 <img id="text1" alt="text1" src="./images/win/text1.png" />
                 <div className="enter-code">
                     <img id="unique" alt="unique" src="./images/win/unique.png" />
-                    <input placeholder="Unique code here" />
+                    <input placeholder="Unique code here" onKeyDown={(e) => {
+                        if (e.keyCode == 13) {
+                            setShowRedeemed(true)
+                        }
+                    }} />
                 </div>
                 <img id="text2" alt="text2" src="./images/win/text2.png" />
                 <img id="hendrick" alt="hendrick" src="./images/win/hendrick.png" />
@@ -69,7 +74,10 @@ function Game({ gotoMenu, gotoGame }: any) {
                     <img className="ic4" alt="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" alt="ic5" src="./images/win/ic5.png" />
                 </div>
-                <img id="redeemed" alt="redeemed" src="./images/win/redeemed.png" />
+                {showRedeemed && <div className="redeemed-backdrop">
+                    <img id="redeemed" alt="redeemed" src="./images/win/redeemed.png" />
+                </div>}
+
             </div>}
 
             {step == 'LOSE' && <div className="content-lose">
