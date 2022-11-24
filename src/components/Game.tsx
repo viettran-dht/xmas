@@ -36,7 +36,7 @@ function Game({ gotoMenu, gotoGame }: any) {
                         axis="y"
                         handle=".handle"
                         defaultPosition={{ x: 0, y: -40 }}
-                        grid={[10, 10]}
+                        grid={[5, 5]}
                         scale={1}
                         onDrag={onDrag}
                     >
@@ -74,7 +74,7 @@ function Game({ gotoMenu, gotoGame }: any) {
             {step == 'LOSE' && <div className="content-lose">
                 <img id="title" alt="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us at @handricksginsea<br />for more fetive goodness!</p>
-                <a className="link-right" href="./menu.html">
+                <a className="link-right">
                     <img id="right" alt="right" src="./images/lose/right.png" />
                 </a>
 
