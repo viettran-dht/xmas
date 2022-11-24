@@ -496,6 +496,14 @@ img#explosion {
   top: 48rem;
   right: 0;
 }
+img#redeemed {
+  position: absolute;
+  top: 42%;
+  left: 0;
+  z-index: 8;
+  transform: translateY(-50%);
+  width: 100%;
+}
 /* Lose */
 .content-lose {
   position: absolute;
@@ -724,7 +732,7 @@ img#explosion {
     max-width: 75%;
   }
   .content-win .enter-code input{
-    top: 38%;
+    top: 44%;
     font-size: 12px;
     line-height: 20px;
     max-width: 180px;
@@ -761,7 +769,20 @@ img#explosion {
     top: 52%;
     right: 2%;
   }
-
-
+  .content-lose img#title {
+    max-width: 87%;
+    margin-top: 40%;
+  }
+  .content-lose .follow {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .content-lose #put {
+    max-width: 66%;
+  }
+  .content-lose #right {
+    margin: 22% 0;
+    max-width: 50%;
+  }
 
 }

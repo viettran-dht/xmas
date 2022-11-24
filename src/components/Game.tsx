@@ -69,6 +69,7 @@ function Game({ gotoMenu, gotoGame }: any) {
                     <img className="ic4" alt="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" alt="ic5" src="./images/win/ic5.png" />
                 </div>
+                <img id="redeemed" alt="redeemed" src="./images/win/redeemed.png" />
             </div>}
 
             {step == 'LOSE' && <div className="content-lose">
