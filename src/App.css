@@ -1,13 +1,13 @@
 @font-face {
-  font-family: BemboBold;
+  font-family: "BemboBold";
   src: url(./fonts/BemboStd-Bold.otf);
 }
 @font-face {
-  font-family: Bembo;
+  font-family: "Bembo";
   src: url(./fonts/BemboStd.otf);
 }
 @font-face {
-  font-family: BemboSemi;
+  font-family: "BemboSemi";
   src: url(./fonts/BemboStd-SemiboldItalic.otf);
 }
 
@@ -17,6 +17,7 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  font-family: "BemboBold";
 }
 .row-bg img {
   width: 100%;
@@ -37,7 +38,7 @@
   font-size: 38px;
   font-weight: bold;
   line-height: 42px;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   color: #000;
   margin-top: 55px;
 }
@@ -145,14 +146,14 @@
   margin: 50px auto 0;
 }
 .content-register .you-must {
-  font-family: BemboBold;
+  font-family: "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 23px;
   line-height: 27px;
   text-align: center;
   color: #000000;
-  margin: 1rem 0 1.5rem;
+  margin: 1rem 0 9.5rem;
 }
 .content-register form .form-item {
   position: relative;
@@ -163,7 +164,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family: "Bembo";
+  font-family:  "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 18px;
@@ -174,8 +175,8 @@
   opacity: 0;
 }
 .content-register form input {
-  width: calc(100% - 2rem);
-  line-height: 79px;
+  width: 100%;
+  line-height: 77px;
   background: #f8f2e4;
   border: 1px solid #a4873e;
   margin-bottom: 26px;
@@ -183,14 +184,14 @@
   font-size: 33px;
   font-weight: bold;
   color: #a4873e;
-  font-family: "Bembo";
+  font-family:  "BemboBold";
   font-style: italic;
 }
 .content-register form input::placeholder {
   font-size: 33px;
   font-weight: bold;
   color: #a4873e;
-  font-family: "Bembo";
+  font-family:  "BemboBold";
   font-style: italic;
 }
 .content-register form input:focus {
@@ -205,7 +206,7 @@
   opacity: 1;
 }
 .content-register form p {
-  font-family: "Bembo";
+  font-family:  "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 23px;
@@ -217,11 +218,11 @@
   display: flex;
   align-items: start;
   justify-content: start;
-  max-width: 480px;
+  max-width: 540px;
   margin: 1rem auto;
 }
 .checkbox label {
-  font-family: "Bembo";
+  font-family:  "BemboBold";
   font-style: italic;
   font-weight: 700;
   font-size: 20px;
@@ -262,7 +263,7 @@
   font-size: 43px;
   font-weight: bold;
   line-height: 51px;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   color: #000;
   margin-top: 57px;
 }
@@ -270,7 +271,7 @@
   font-size: 23px;
   font-weight: bold;
   line-height: 27px;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   color: #000;
   margin-top: 57px;
 }
@@ -346,7 +347,6 @@ img#cracked-click {
   position: absolute;
   left: 27%;
   z-index: 2;
-  -webkit-animation-name: Explosion2Animation;
 }
 img#explosion2 {
   position: absolute;
@@ -355,19 +355,12 @@ img#explosion2 {
   width: 60%;
   top: 20%;
   left: 46%;
-  transform: rotate(-25deg) translateX(-50%);
-  -webkit-animation-name: Explosion2Animation;
-  -webkit-animation-duration: 0.5s;
-  animation-delay: 1s;
 }
 #sun {
   position: absolute;
   left: -10%;
   top: 9%;
   width: 120%;
-  -webkit-animation-name: SunAnimation;
-  -webkit-animation-duration: 0.5s;
-  animation-delay: 1s;
   z-index: 5;
   opacity: 0;
 }
@@ -378,16 +371,12 @@ img#explosion {
   width: 60%;
   top: 25%;
   left: 50%;
-  transform: rotate(-25deg) translateX(-50%);
-  -webkit-animation-name: Explosion2Animation;
-  -webkit-animation-duration: 0.5s;
-  animation-delay: 1s;
 }
 #mechanism {
   width: 95%;
   position: absolute;
   left: 24px;
-  bottom: 25%;
+  bottom: 322px;
   z-index: 1;
 }
 /*  */
@@ -401,15 +390,14 @@ img#explosion {
 .content-win img#text1 {
   max-width: 540px;
   display: block;
-  margin: 260px auto 0;
-  animation: winText1 1s ease-out forwards;
+  margin: 267px auto 0;
   z-index: 3;
   position: relative;
 }
 .content-win .enter-code {
   position: relative;
-  margin: 150px auto 0;
-  max-width: 460px;
+  margin: 158px auto 0;
+  max-width: 470px;
   animation: winAni2 0.5s ease-in forwards;
   z-index: 3;
 }
@@ -428,7 +416,7 @@ img#explosion {
   text-transform: uppercase;
   border: 0;
   font-weight: bold;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   text-align: center;
 }
 .content-win .enter-code input::placeholder {
@@ -438,15 +426,15 @@ img#explosion {
   text-transform: uppercase;
   border: 0;
   font-weight: bold;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   text-align: center;
 }
 .content-win .enter-code input:focus {
   outline: none;
 }
 .content-win img#text2 {
-  max-width: 465px;
-  margin: 1.125rem auto 0;
+  max-width: 489px;
+  margin: 0.125rem auto 0;
   display: block;
   animation: winAni2 0.5s ease-in forwards;
   z-index: 2;
@@ -464,25 +452,25 @@ img#explosion {
   z-index: 1;
   top: 0;
   left: 0;
-  animation: winIcon 2s ease both;
+  animation: winIcon 10s ease both;
 }
 .icon-win img.ic1 {
-  max-width: 30%;
+  width: 14rem;
   position: relative;
-  left: 6%;
-  top: -1%;
+  left: 1.5rem;
+  top: -3rem;
 }
 .icon-win img.ic2 {
-  width: 35%;
+  width: 255px;
   position: absolute;
-  right: 12%;
-  top: 0;
+  right: 3rem;
+  top: -4rem;
 }
 .icon-win img.ic3 {
   position: absolute;
-  left: 4.5rem;
+  left: 3.5rem;
   max-width: 235px;
-  top: 22rem;
+  top: 18rem;
 }
 .icon-win img.ic4 {
   position: absolute;
@@ -491,18 +479,17 @@ img#explosion {
   max-width: 260px;
 }
 .icon-win img.ic5 {
-  max-width: 280px;
+  max-width: 250px;
   position: absolute;
-  top: 48rem;
-  right: 0;
+  top: 45rem;
+  right: 1rem;
 }
-img#redeemed {
+.img-gif {
   position: absolute;
-  top: 42%;
-  left: 0;
-  z-index: 8;
-  transform: translateY(-50%);
-  width: 100%;
+  top: auto;
+  left: 0px;
+  z-index: 2;
+  animation: noneGif 0.5s ease-in forwards;
 }
 /* Lose */
 .content-lose {
@@ -517,149 +504,47 @@ img#redeemed {
   margin-top: 320px;
   position: relative;
   left: 1px;
-  /* animation: loseAni1 0.5s linear forwards; */
 }
 .content-lose .follow {
   font-size: 26px;
   line-height: 30px;
   font-weight: bold;
-  font-family: BemboBold;
+  font-family: "BemboBold";
   font-style: italic;
   margin-top: 40px;
-  animation: loseAni2 0.2s linear forwards;
+  color: #000;
+}
+.link-right {
+  display: block;
+  margin: 120px 0;
+  position: relative;
+  z-index: 3;
 }
 .content-lose #right {
   color: #000;
-  margin: 120px 0;
   max-width: 380px;
-  animation: loseAni3 0.6s linear forwards;
+  left: 23px;
+  position: relative;
 }
 .content-lose #put {
   max-width: 400px;
-  animation: loseAni4 0.5s linear forwards;
 }
 /* end style */
-@keyframes SunAnimation {
-  from {
-    -webkit-transform: scale(0.4);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-@keyframes Explosion2Animation {
-  from {
-    -webkit-transform: rotate(0deg) scale(0.5) skew(0deg) rotate(-20deg) translate(-30%);
-    opacity: 0.7;
-  }
-  to {
-    -webkit-transform: rotate(0deg) scale(2) skew(0deg) rotate(-28deg) translate(-30%);
-    opacity: 1;
-  }
-}
-
-/* win */
-@keyframes winText1 {
-  0% {
-    transform: scale(0.1);
-    opacity: 0.5;
-  }
-  80% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes winAni2 {
-  0% {
-    transform: scale(1.2);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes winAni3 {
-  0% {
-    transform: translateX(-120px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 @keyframes winIcon {
   0% {
-    transform: scale(0.1);
-    opacity: 0.6;
-    animation-duration: 0.5s;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-    animation-duration: 3s;
+    transform: translateY(0);
   }
   100% {
     transform: translateY(40px);
   }
 }
-/* lose */
-@keyframes loseAni1 {
-  0% {
-    transform: translateY(50px) scale(0.4);
-    opacity: 0.7;
+@keyframes noneGif {
+  from {
+    display: block;
   }
-  60% {
-    transform: translateY(-30px) scale(1.1);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-@keyframes loseAni2 {
-  0% {
-    transform: scale(0.2);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes loseAni3 {
-  0% {
-    transform: translateX(30px) scale(0.4);
-    opacity: 0.3;
-  }
-  30% {
-    transform: translateX(-200px) scale(1.1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-}
-@keyframes loseAni4 {
-  0% {
-    transform: translateY(-50px) scale(0.4);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(50px) scale(1.2);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
+  to{
+    display: none;
+    opacity: 0;
   }
 }
 /*  */
@@ -684,6 +569,7 @@ img#redeemed {
   .content-register .you-must{
     font-size: 14px;
     line-height: 18px;
+    margin-bottom: 2.5rem;
   }
   .content-register form .form-item{
     max-width: 82%;
@@ -706,7 +592,7 @@ img#redeemed {
     line-height: 16px;
   }
   .checkbox{
-    max-width: 86%;
+    max-width: 250px;
   }
   .checkbox label{
     font-size: 10px;
@@ -724,7 +610,7 @@ img#redeemed {
     max-width: 50%;
   }
   .content-win img#text1 {
-    max-width: 90%;
+    max-width: 80%;
     margin: 45% auto 0;
   }
   .content-win .enter-code{
@@ -770,7 +656,7 @@ img#redeemed {
     right: 2%;
   }
   .content-lose img#title {
-    max-width: 87%;
+    max-width: 80%;
     margin-top: 40%;
   }
   .content-lose .follow {
@@ -780,8 +666,10 @@ img#redeemed {
   .content-lose #put {
     max-width: 66%;
   }
-  .content-lose #right {
+  .content-lose .link-right {
     margin: 22% 0;
+  }
+  .content-lose #right{
     max-width: 50%;
   }
 
