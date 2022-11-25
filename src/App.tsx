@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { drawAPI, submitAPI } from './api';
 import OhDear from './components/OhDear';
+import mixpanel from 'mixpanel-browser';
+mixpanel.init('73d7f7c197a70633139d2560ca0f7a31', { debug: true });
 const imgs = [
   './images/game/cracked-bot.png',
   './images/game/mechanism.png',
@@ -50,6 +52,7 @@ function App() {
     setTimeout(() => {
       setStep('REGISTER')
     }, 3000);
+    mixpanel.track('loadgame');
   }, [])
   const onRegister = async (values: any) => {
     try {
@@ -63,9 +66,15 @@ function App() {
         return
       }
       const result = await drawAPI(player);
-      setResult({ ...result, played })
+      setResult({ ...result, played });
+
       setLoading(false)
       changeStep('GAME')
+      if (result.status == 'win') {
+        mixpanel.track('win', result);
+      } else {
+        mixpanel.track('loss', result);
+      }
     } catch (error) {
       setLoading(false)
     }
