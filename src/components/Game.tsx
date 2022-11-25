@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Draggable from 'react-draggable';
+import { redeemAPI } from '../api';
+import { ToastContainer, toast } from 'react-toastify';
 function Game({ result }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
     const [step, setStep] = useState('START');
     const [showRedeemed, setShowRedeemed] = useState(false)
+    const [coupon, setCoupon] = useState('')
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        console.log('result:',result);
+        
+        if (result.played) {
+            setShowRedeemed(true)
+            setStep('WIN')
+        }
+    }, [result])
     const setWinLose = () => {
         if (result?.status == 'win') {
             setStep('WIN');
@@ -24,8 +36,21 @@ function Game({ result }: any) {
     }
     const closePopup = () => {
         console.log('close popup');
-
         window.parent.postMessage("closePopup", "*")
+    }
+
+    const checkCoupon = async () => {
+        try {
+            if (loading) return
+            setLoading(true);
+            await redeemAPI(result.player, coupon)
+            setShowRedeemed(true);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+            toast.error("Coupon is invalid");
+        }
+
     }
     return (
         <div className="row-bg">
@@ -61,11 +86,15 @@ function Game({ result }: any) {
                 <img id="text1" src="./images/win/text1.png" />
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
-                    <input onKeyDown={(e) => {
-                        if (e.keyCode == 13) {
-                            setShowRedeemed(true)
-                        }
-                    }} placeholder="Unique code here" />
+                    <input
+                        value={coupon}
+                        onChange={(e) => setCoupon(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.keyCode == 13) {
+                                checkCoupon()
+                            }
+                        }}
+                        placeholder="Unique code here" />
                 </div>
                 <img id="text2" src="./images/win/text2.png" />
                 <img id="hendrick" src="./images/win/hendrick.png" />

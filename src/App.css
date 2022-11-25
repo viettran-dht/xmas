@@ -684,3 +684,12 @@ img#explosion {
   align-items: center;
   display: flex;
 }
+.close-icon {
+  height: 30px;
+  position: absolute;
+  z-index: 111;
+  right: 10px;
+  top: 10px;
+  background: white;
+  border-radius: 50%;
+}

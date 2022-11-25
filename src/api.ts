@@ -19,3 +19,6 @@ export const submitAPI = (request: {
 export const drawAPI = (clientId: string) => {
     return client.get(`xmas/${clientId}/lucky-draw`).then(res => res.data.data)
 }
+export const redeemAPI = (clientId: string, coupon: string) => {
+    return client.get(`xmas/${clientId}/coupons/${coupon}/redeem`).then(res => res.data.data)
+}

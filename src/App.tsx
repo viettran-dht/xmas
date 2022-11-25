@@ -55,7 +55,7 @@ function App() {
       const newUser = await submitAPI(values)
       const { played, player, status } = newUser
       const result = await drawAPI(player);
-      setResult(result)
+      setResult({ ...result, played })
       setLoading(false)
       changeStep('GAME')
     } catch (error) {
@@ -63,8 +63,13 @@ function App() {
     }
 
   }
+  const closeIframe = () => {
+    console.log('close popup');
+    window.parent.postMessage("closePopup", "*")
+  }
   return (
     <>
+      <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
       {step == 'GAME' && <Game result={result} />}
       {step == 'REGISTER' && <Register onRegister={onRegister} />}
       <ToastContainer />

@@ -26,7 +26,7 @@ function Register({ onRegister }: any) {
         }
         for (const key in values) {
             if (!values[key]) {
-                toast("Please type all input");
+                toast.error("Please type all input");
                 return
             }
         }
