@@ -318,7 +318,9 @@ img#bot-flower {
   display: block;
   margin: 1rem auto 100px;
 }
-
+.is-mobile{
+  display: none;
+}
 /*  */
 .content-before {
   position: absolute;
@@ -509,7 +511,7 @@ img#explosion {
   margin-top: 320px;
   position: relative;
   left: 1px;
-    
+  animation: loseAni1 0.2s linear forwards;
 }
 .content-lose .follow {
   font-size: 26px;
@@ -767,6 +769,12 @@ img#explosion {
   }
   .content-lose #right {
     max-width: 50%;
+  }
+  .is-desktop{
+    display: none;
+  }
+  .is-mobile{
+    display: block;
   }
 }
 .redeemed-backdrop {
