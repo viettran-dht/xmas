@@ -10,9 +10,14 @@ function Game({ result }: any) {
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
-    console.log(result.couponType);
+    useEffect(() => {
 
+        const body = document.getElementsByTagName('body');
+        body[0].style.overflow = 'hidden'
+    }, [])
     const setWinLose = () => {
+        const body = document.getElementsByTagName('body');
+        body[0].style.overflow = 'unset'
         if (result?.status == 'win') {
             setStep('WIN');
         } else {
@@ -49,9 +54,9 @@ function Game({ result }: any) {
     return (
         <div className="row-bg">
 
-            {/* <img src="./images/background.png" /> */}
-            <img src="./images/game/bg-unbox.jpg" />
-        
+             {/* <img src="./images/background.png" /> */}
+             <img src="./images/game/bg-unbox.jpg" />
+
             <div className="content-before" >
                 {step == 'START' && <div className="game-cracked-group">
                     <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
