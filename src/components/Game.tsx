@@ -54,7 +54,7 @@ function Game({ result }: any) {
     return (
         <div className="row-bg">
 
-            <img src="./images/background.png" />
+            <img src="./images/background.jpg" />
 
             <div className="content-before" >
                 {step == 'START' && <div className="game-cracked-group">

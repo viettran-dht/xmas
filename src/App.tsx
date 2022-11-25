@@ -30,11 +30,12 @@ const imgs = [
   "./images/lose/title.png",
   "./images/lose/right.png",
   "./images/lose/put.png",
-  "./images/win/redeemed.png"
-
+  "./images/win/redeemed.png",
+  "./images/before-start.gif",
+  "./images/background.jpg"
 ]
 function App() {
-  const [step, setStep] = useState('BEFORE_START');
+  const [step, setStep] = useState('REGISTER');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
@@ -49,9 +50,6 @@ function App() {
   }
   useEffect(() => {
     cacheImages()
-    setTimeout(() => {
-      setStep('REGISTER')
-    }, 3000);
     mixpanel.track('loadgame');
   }, [])
   const onRegister = async (values: any) => {
@@ -69,7 +67,14 @@ function App() {
       setResult({ ...result, played });
 
       setLoading(false)
-      changeStep('GAME')
+      changeStep('BEFORE_START')
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const body = document.getElementsByTagName('body');
+        body[0].style.overflow = 'hidden';
+        setStep('GAME')
+      }, 3000);
+     
       if (result.status == 'win') {
         mixpanel.track('win', result);
       } else {
