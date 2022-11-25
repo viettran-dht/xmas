@@ -10,14 +10,8 @@ function Game({ result }: any) {
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
-    useEffect(() => {
-        console.log('result:', result);
+    console.log(result.couponType);
 
-        if (result.played) {
-            setShowRedeemed(true)
-            setStep('WIN')
-        }
-    }, [result])
     const setWinLose = () => {
         if (result?.status == 'win') {
             setStep('WIN');
@@ -83,7 +77,8 @@ function Game({ result }: any) {
 
             {step == 'WIN' && <div className="content-win win-coctail">
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
-                <img id="text1" src="./images/win/text1.png" />
+                {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
+
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
                     <input

@@ -32,7 +32,7 @@ const imgs = [
 
 ]
 function App() {
-  const [step, setStep] = useState('OH_DEAR');
+  const [step, setStep] = useState('REGISTER');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
