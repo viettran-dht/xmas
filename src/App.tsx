@@ -5,6 +5,7 @@ import Register from './components/Register';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { drawAPI, submitAPI } from './api';
+import OhDear from './components/OhDear';
 const imgs = [
   './images/game/cracked-bot.png',
   './images/game/mechanism.png',
@@ -31,7 +32,7 @@ const imgs = [
 
 ]
 function App() {
-  const [step, setStep] = useState('REGISTER');
+  const [step, setStep] = useState('OH_DEAR');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
@@ -54,6 +55,10 @@ function App() {
       console.log('values', values);
       const newUser = await submitAPI(values)
       const { played, player, status } = newUser
+      if (played) {
+        changeStep('OH_DEAR')
+        return
+      }
       const result = await drawAPI(player);
       setResult({ ...result, played })
       setLoading(false)
@@ -72,6 +77,7 @@ function App() {
       <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
       {step == 'GAME' && <Game result={result} />}
       {step == 'REGISTER' && <Register onRegister={onRegister} />}
+      {step == 'OH_DEAR' && <OhDear closeIframe={closeIframe}/>}
       <ToastContainer />
     </>
   );

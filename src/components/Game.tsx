@@ -11,8 +11,8 @@ function Game({ result }: any) {
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-        console.log('result:',result);
-        
+        console.log('result:', result);
+
         if (result.played) {
             setShowRedeemed(true)
             setStep('WIN')
@@ -87,6 +87,7 @@ function Game({ result }: any) {
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
                     <input
+                        type="number"
                         value={coupon}
                         onChange={(e) => setCoupon(e.target.value)}
                         onKeyDown={(e) => {

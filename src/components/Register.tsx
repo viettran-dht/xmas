@@ -51,7 +51,7 @@ function Register({ onRegister }: any) {
                         <input type="text" value={form.lastName} onChange={setFormValue('lastName')} id="last-name" placeholder="Last Name" />
                     </div>
                     <div className="form-item position-relative">
-                        <InputMask mask="99999999999" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." maskPlaceholder="." />
+                        <InputMask mask="99999999999" type="tel" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." maskPlaceholder="." />
                     </div>
                     <div className="form-item position-relative">
                         {/* <label htmlFor="date-of-birth">Date of birth</label> */}
