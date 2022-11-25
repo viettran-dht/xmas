@@ -82,7 +82,7 @@ function Game({ result }: any) {
             </div>
 
             {step == 'WIN' && <div className="content-win win-coctail">
-                <img id="cocktail" className="img-gif" src="./images/game/cocktail.gif" />
+                <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 <img id="text1" src="./images/win/text1.png" />
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
@@ -111,7 +111,7 @@ function Game({ result }: any) {
 
             </div>}
             <div className="content-win win-socks" hidden>
-                <img id="cocktail" className="img-gif" src="./images/game/socks.gif" />
+                <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 <img id="text1" src="./images/win/text1socks.png" />
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
@@ -129,7 +129,6 @@ function Game({ result }: any) {
             </div>
 
             {step == 'LOSE' && <div className="content-lose">
-                <img id="lose" className="img-gif" src="./images/lose/lose.gif" />
                 <img id="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us at @handricksginsea<br />for more fetive goodness!</p>
                 <a className="link-right">
