@@ -690,7 +690,7 @@ img#explosion {
     line-height: 16px;
   }
   .checkbox {
-    max-width: 250px;
+    max-width: 280px;
   }
   .checkbox label {
     font-size: 10px;
@@ -720,6 +720,7 @@ img#explosion {
     font-size: 12px;
     line-height: 20px;
     max-width: 180px;
+    width: 100%;
   }
   .content-win .enter-code input::placeholder {
     font-size: 12px;
@@ -776,6 +777,25 @@ img#explosion {
   .is-mobile{
     display: block;
   }
+  img#oh-dear{
+    max-width: 65%;
+  }
+  .content-dear .you-must {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 1.5rem auto 5rem;
+  }
+  .two-btn {
+    max-width: 82%;
+  }
+  .two-btn img {
+    max-width: 80%;
+  }
+  img#bot-flower {
+    max-width: 95%;
+    margin-top: 2rem;
+  }
+
 }
 .redeemed-backdrop {
   position: absolute;
