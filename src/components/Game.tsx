@@ -126,7 +126,7 @@ function Game({ result }: any) {
 
             {step == 'LOSE' && <div className="content-lose">
                 <img id="title" src="./images/lose/title.png" />
-                <p className="follow">Follow us at @handricksginsea<br />for more fetive goodness!</p>
+                <p className="follow">Follow us @hendricksginsea<br />for more festive goodness!</p>
                 <a className="link-right">
                     <img id="right" onClick={() => closePopup()} src="./images/lose/right.png" />
                 </a>
