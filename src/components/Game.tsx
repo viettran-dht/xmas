@@ -49,8 +49,9 @@ function Game({ result }: any) {
     return (
         <div className="row-bg">
 
-            <img src="./images/background.png" />
-
+            {/* <img src="./images/background.png" /> */}
+            <img src="./images/game/bg-unbox.jpg" />
+        
             <div className="content-before" >
                 {step == 'START' && <div className="game-cracked-group">
                     <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
@@ -126,7 +127,7 @@ function Game({ result }: any) {
 
             {step == 'LOSE' && <div className="content-lose">
                 <img id="title" src="./images/lose/title.png" />
-                <p className="follow">Follow us <a href='https://www.instagram.com/hendricksginsea'>@hendricksginsea</a><br />for more festive goodness!</p>
+                <p className="follow">Follow us <a href='https://www.instagram.com/hendricksginsea' target="_blank">@hendricksginsea</a><br />for more festive goodness!</p>
                 <a className="link-right">
                     <img id="right" onClick={() => closePopup()} src="./images/lose/right.png" />
                 </a>
