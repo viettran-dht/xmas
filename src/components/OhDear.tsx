@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 function OhDear({ closeIframe }: any) {
     return <div className="row-bg">
-        <img src="./images/oh-dear/dear-bg.png" />
-
+        <img className='is-desktop' src="./images/oh-dear/dear-bg.png" />
+        <img className='is-mobile' src="./images/oh-dear/bg-mob.png" />
         <div className="content-dear" >
             <img id="logo" src="./images/home/logo.png" />
             <img id="oh-dear" src="./images/oh-dear/oh-dear.png" />
