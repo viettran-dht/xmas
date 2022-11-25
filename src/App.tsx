@@ -32,7 +32,7 @@ const imgs = [
 
 ]
 function App() {
-  const [step, setStep] = useState('REGISTER');
+  const [step, setStep] = useState('BEFORE_START');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
@@ -47,6 +47,9 @@ function App() {
   }
   useEffect(() => {
     cacheImages()
+    setTimeout(() => {
+      setStep('REGISTER')
+    }, 3000);
   }, [])
   const onRegister = async (values: any) => {
     try {
@@ -77,8 +80,11 @@ function App() {
       <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
       {step == 'GAME' && <Game result={result} />}
       {step == 'REGISTER' && <Register onRegister={onRegister} />}
-      {step == 'OH_DEAR' && <OhDear closeIframe={closeIframe}/>}
+      {step == 'OH_DEAR' && <OhDear closeIframe={closeIframe} />}
       <ToastContainer />
+      {step == 'BEFORE_START' && <div className="row-bg">
+        <img src="./images/before-start.gif" />
+      </div>}
     </>
   );
 }
