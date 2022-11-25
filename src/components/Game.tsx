@@ -10,9 +10,14 @@ function Game({ result }: any) {
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
-    console.log(result.couponType);
+    useEffect(() => {
 
+        const body = document.getElementsByTagName('body');
+        body[0].style.overflow = 'hidden'
+    }, [])
     const setWinLose = () => {
+        const body = document.getElementsByTagName('body');
+        body[0].style.overflow = 'unset'
         if (result?.status == 'win') {
             setStep('WIN');
         } else {
