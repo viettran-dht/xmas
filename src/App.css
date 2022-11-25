@@ -523,6 +523,12 @@ img#explosion {
   color: #000;
   animation: loseAni2 0.2s linear forwards;
 }
+.content-lose .follow a {
+  color: #000;
+}
+.content-lose .follow a:hover{
+  text-decoration: none;
+}
 .content-lose .link-right {
   display: block;
   margin: 120px 0;
