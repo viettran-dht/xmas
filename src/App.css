@@ -236,6 +236,11 @@
   padding-left: 1rem;
   color: #000;
 }
+.checkbox label a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 23px;
+}
 .checkbox input#checkbox {
   width: 32px;
   height: 32px;
@@ -302,9 +307,13 @@ img#oh-dear {
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
+  position: relative;
+  top: 53%;
+  left: 6px;
 }
 .two-btn img {
   max-width: 200px;
+  opacity: 0;
 }
 img#bot-flower {
   max-width: 585px;

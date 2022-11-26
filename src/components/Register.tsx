@@ -53,11 +53,11 @@ function Register({ onRegister }: any) {
                     <div className="form-item position-relative">
                         <InputMask mask="99999999999" type="tel" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." maskPlaceholder="." />
                     </div>
-                    {/* <div className="form-item position-relative"> */}
+                    <div className="form-item position-relative">
                         {/* <label htmlFor="date-of-birth">Date of birth</label> */}
                         {/* <input type="text" value={form.dob} id="date-of-birth" placeholder="Date of birth" /> */}
-                        {/* <InputMask mask="99/99/9999" value={form.dob} onChange={setFormValue('dob')} placeholder="Date of birth" maskPlaceholder="-" />
-                    </div> */}
+                        <InputMask mask="99/99/9999" value={form.dob} onChange={setFormValue('dob')} placeholder="Date of birth" maskPlaceholder="-" />
+                    </div>
                     <div className="form-item position-relative">
                         {/* <label htmlFor="email">Email</label> */}
                         <input type="email" value={form.email} onChange={setFormValue('email')} id="email" placeholder="Email" />
@@ -69,10 +69,13 @@ function Register({ onRegister }: any) {
                     <div className="checkbox d-flex justify-content-start align-items-start position-relative">
                         <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
                         <label htmlFor="checkbox">
-                            By providing your contact details, you consent to our<br />
-                            Terms and Conditions and Privacy Policy and agree<br />
-                            to receive marketing updates. You can unsubscribe at<br />
-                            any time.
+                            <div>
+                                By providing your contact details, you consent to our<br />
+                            <a href='https://www.since1887.sg/pages/terms-and-conditions'>Terms and Conditions </a>and <a href='https://www.since1887.sg/pages/privacy-policy'>Privacy Policy </a> and<br />
+                            agree to receive marketing updates. You can <br />
+                            unsubscribe at any time.
+                            </div>
+                            
                         </label>
                     </div>
                     <a className="submit" onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
