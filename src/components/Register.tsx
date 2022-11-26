@@ -53,11 +53,11 @@ function Register({ onRegister }: any) {
                     <div className="form-item position-relative">
                         <InputMask mask="99999999999" type="tel" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." maskPlaceholder="." />
                     </div>
-                    <div className="form-item position-relative">
+                    {/* <div className="form-item position-relative"> */}
                         {/* <label htmlFor="date-of-birth">Date of birth</label> */}
                         {/* <input type="text" value={form.dob} id="date-of-birth" placeholder="Date of birth" /> */}
-                        <InputMask mask="99/99/9999" value={form.dob} onChange={setFormValue('dob')} placeholder="Date of birth" maskPlaceholder="-" />
-                    </div>
+                        {/* <InputMask mask="99/99/9999" value={form.dob} onChange={setFormValue('dob')} placeholder="Date of birth" maskPlaceholder="-" />
+                    </div> */}
                     <div className="form-item position-relative">
                         {/* <label htmlFor="email">Email</label> */}
                         <input type="email" value={form.email} onChange={setFormValue('email')} id="email" placeholder="Email" />
