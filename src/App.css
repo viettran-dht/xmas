@@ -318,7 +318,7 @@ img#bot-flower {
   display: block;
   margin: 1rem auto 100px;
 }
-.is-mobile{
+.is-mobile {
   display: none;
 }
 /*  */
@@ -527,7 +527,7 @@ img#explosion {
 .content-lose .follow a {
   color: #000;
 }
-.content-lose .follow a:hover{
+.content-lose .follow a:hover {
   text-decoration: none;
 }
 .content-lose .link-right {
@@ -660,7 +660,6 @@ img#explosion {
   }
 }
 
-
 /*  */
 @media only screen and (max-width: 450px) {
   .content-register img#logo {
@@ -778,13 +777,13 @@ img#explosion {
   .content-lose #right {
     max-width: 50%;
   }
-  .is-desktop{
+  .is-desktop {
     display: none;
   }
-  .is-mobile{
+  .is-mobile {
     display: block;
   }
-  img#oh-dear{
+  img#oh-dear {
     max-width: 65%;
   }
   .content-dear .you-must {
@@ -802,7 +801,6 @@ img#explosion {
     max-width: 95%;
     margin-top: 2rem;
   }
-
 }
 .redeemed-backdrop {
   position: absolute;
@@ -823,4 +821,30 @@ img#explosion {
   top: 10px;
   background: white;
   border-radius: 50%;
+}
+
+.error-message {
+  text-align: left;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  color: red;
+  font-size: 14px;
+  font-style: italic;
+}
+.disabled-btn {
+  opacity: 0.7;
+}
+
+/* hide step arrow input number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

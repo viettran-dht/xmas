@@ -12,8 +12,8 @@ function Game({ result }: any) {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
 
-        const body = document.getElementsByTagName('body');
-        body[0].style.overflow = 'hidden'
+        // const body = document.getElementsByTagName('body');
+        // body[0].style.overflow = 'hidden'
     }, [])
     const setWinLose = () => {
         const body = document.getElementsByTagName('body');

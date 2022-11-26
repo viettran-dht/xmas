@@ -50,7 +50,7 @@ function App() {
   }
   useEffect(() => {
     cacheImages()
-    mixpanel.track('loadgame');
+    // mixpanel.track('loadgame');
   }, [])
   const onRegister = async (values: any) => {
     try {
