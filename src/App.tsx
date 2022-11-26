@@ -32,7 +32,8 @@ const imgs = [
   "./images/lose/put.png",
   "./images/win/redeemed.png",
   "./images/before-start.gif",
-  "./images/background.jpg"
+  "./images/background.jpg",
+  "./images/lose.gif",
 ]
 function App() {
   const [step, setStep] = useState('REGISTER');

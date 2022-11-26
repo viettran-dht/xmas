@@ -10,6 +10,7 @@ function Game({ result }: any) {
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
+    const [hideLossGif, setHideLossGif] = useState(false);
     useEffect(() => {
 
         // const body = document.getElementsByTagName('body');
@@ -22,6 +23,9 @@ function Game({ result }: any) {
             setStep('WIN');
         } else {
             setStep('LOSE');
+            setTimeout(() => {
+                setHideLossGif(true)
+            }, 3000);
         }
     }
     const onDrag = (e: any, dragElement: any) => {
@@ -54,8 +58,8 @@ function Game({ result }: any) {
     return (
         <div className="row-bg">
 
-             {/* <img src="./images/background.png" /> */}
-             <img src="./images/game/bg-unbox.jpg" />
+            {/* <img src="./images/background.png" /> */}
+            <img src="./images/game/bg-unbox.jpg" />
 
             <div className="content-before" >
                 {step == 'START' && <div className="game-cracked-group">
@@ -132,6 +136,7 @@ function Game({ result }: any) {
             </div>
 
             {step == 'LOSE' && <div className="content-lose">
+                {!hideLossGif && <img src="./images/lose.gif" />}
                 <img id="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us <a href='https://www.instagram.com/hendricksginsea' target="_blank">@hendricksginsea</a><br />for more festive goodness!</p>
                 <a className="link-right">
