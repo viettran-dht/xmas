@@ -84,7 +84,9 @@ function Game({ result }: any) {
                     <img id="mechanism" src="./images/game/mechanism.png" />
                 </div>
             </div>
-
+            {step == 'WIN' && showRedeemed && <div className="redeemed-backdrop">
+                    <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
+                </div>}
             {step == 'WIN' && <div className="content-win win-coctail">
                 <img className='bg-only-win' src="./images/background2.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
@@ -112,9 +114,9 @@ function Game({ result }: any) {
                     <img className="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
-                {showRedeemed && <div className="redeemed-backdrop">
+                {/* {showRedeemed && <div className="redeemed-backdrop">
                     <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
-                </div>}
+                </div>} */}
 
             </div>}
             <div className="content-win win-socks" hidden>
