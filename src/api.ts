@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'https://alpha-api.flowco.io';
+const baseURL = 'https://api.flowco.io';
 
 const client = axios.create({
     baseURL,

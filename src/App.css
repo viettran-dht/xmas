@@ -874,3 +874,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+#root{
+ background-image: url('/public/images/root-bg.jpg');
+ background-size: cover;
+}
