@@ -3,7 +3,7 @@ function OhDear({ closeIframe }: any) {
     return <div className="row-bg">
         {/* <img className='is-desktop' src="./images/oh-dear/dear-bg.png" />
         <img className='is-mobile' src="./images/oh-dear/bg-mob.png" /> */}
-        <img className='is-desktop' src="./images/oh-dear/oh-dear-bg.jpg" />
+        <img src="./images/oh-dear/oh-dear-bg.jpg" />
         <div className="content-dear" >
             {/* <img id="logo" src="./images/home/logo.png" />
             <img id="oh-dear" src="./images/oh-dear/oh-dear.png" />
@@ -11,10 +11,11 @@ function OhDear({ closeIframe }: any) {
             <div className="two-btn">
                 {/* <a onClick={() => closeIframe()}><img id="left" src="./images/oh-dear/left.png" /></a>
                 <a onClick={() => closeIframe()}><img id="left" src="./images/oh-dear/right.png" /></a> */}
-                <a onClick={() => closeIframe()}></a>
-                <a onClick={() => closeIframe()}></a>
+                <a onClick={() => closeIframe()}><img id="left" src="./images/oh-dear/left.png" /></a>
+                <a onClick={() => closeIframe()}><img id="left" src="./images/oh-dear/right.png" /></a>
             </div>
             {/* <img id="bot-flower" src="./images/oh-dear/bot-flower.png" /> */}
+            <p><a className='link-ig' href='https://www.instagram.com/hendricksginsea' target="_blank"></a></p>
         </div>
     </div>
 }

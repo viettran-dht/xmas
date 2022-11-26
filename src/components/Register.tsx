@@ -72,13 +72,13 @@ function Register({ onRegister }: any) {
                         By registering, you declare that you are minimally<br />
                         18 years old and are of legal drinking age in Singapore.
                     </p>
-                    <div className="checkbox d-flex justify-content-start align-items-start position-relative">
+                    <div className="checkbox position-relative">
                         <input type="checkbox" id="checkbox" name="checkbox" checked={form.checked} onChange={(e) => {
                             const newForm = { ...form, checked: e.target.checked }
                             setForm(newForm)
                         }} />
-                        <label htmlFor="checkbox">
-                            <div>
+                        <label htmlFor="checkbox" className='checkbox-rg'>
+                            <div className='checkbox-ct'>
                                 By providing your contact details, you consent to our<br />
                             <a href='https://www.since1887.sg/pages/terms-and-conditions' target="_blank">Terms and Conditions </a>and <a href='https://www.since1887.sg/pages/privacy-policy' target="_blank">Privacy Policy </a> and<br />
                             agree to receive marketing updates. You can <br />
@@ -88,8 +88,8 @@ function Register({ onRegister }: any) {
                         </label>
 
                     </div>
-                    {!form.checked && <div className="error-message checkbox d-flex justify-content-start align-items-start position-relative">
-                        * You must agree with the Term and Conditions and Privacy Policy to continue
+                    {!form.checked && <div className="error-message checkbox d-flex justify-content-center align-items-start position-relative">
+                        * You must agree with the Term and Conditions and<br /> Privacy Policy to continue
                     </div>}
                     <a className={`submit ${form.checked ? '' : 'disabled-btn'}`} onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
                 </form>
