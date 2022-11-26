@@ -19,6 +19,7 @@ function Register({ onRegister }: any) {
 
     const setFormValue = (field: string) => (e: any) => {
         const newForm = { ...form, [field]: e.target.value }
+        newForm.phone = newForm.phone.replace(/\D/g, '')
         setForm(newForm)
     }
     const submit = () => {
