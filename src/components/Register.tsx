@@ -77,11 +77,13 @@ function Register({ onRegister }: any) {
                             setForm(newForm)
                         }} />
                         <label htmlFor="checkbox">
-                            By providing your contact details, you consent to our<br />
-                            Terms and Conditions and Privacy Policy and agree<br />
-                            to receive marketing updates. You can unsubscribe at<br />
-                            any time.
-
+                            <div>
+                                By providing your contact details, you consent to our<br />
+                            <a href='https://www.since1887.sg/pages/terms-and-conditions'>Terms and Conditions </a>and <a href='https://www.since1887.sg/pages/privacy-policy'>Privacy Policy </a> and<br />
+                            agree to receive marketing updates. You can <br />
+                            unsubscribe at any time.
+                            </div>
+                            
                         </label>
 
                     </div>
