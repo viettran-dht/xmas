@@ -597,6 +597,7 @@ img#explosion {
   position: relative;
   z-index: 3;
   animation: loseAni3 0.6s linear forwards;
+  cursor: pointer;
 }
 .content-lose #right {
   color: #000;
