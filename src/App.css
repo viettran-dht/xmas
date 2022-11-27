@@ -10,6 +10,11 @@
   font-family: "BemboSemi";
   src: url(./fonts/BemboStd-SemiboldItalic.otf);
 }
+@font-face {
+  font-family: "GeorgiaRegular";
+  src: url(./fonts/GeorgiaRegular.ttf);
+}
+
 html, body, #root {
   height: 100%;
 }
@@ -184,17 +189,17 @@ html, body, #root {
   margin-bottom: 50px;
   padding: 0 1rem;
   font-size: 33px;
-  font-weight: bold;
+  font-weight: normal;
   color: #a4873e;
-  font-family: "BemboBold";
+  font-family: 'GeorgiaRegular';
   font-style: italic;
   border-radius: 6px;
 }
 .content-register form input::placeholder {
   font-size: 33px;
-  font-weight: bold;
+  font-weight: normal;
   color: #a4873e;
-  font-family: "BemboBold";
+  font-family: "GeorgiaRegular";
   font-style: italic;
 }
 .content-register form input:focus {
