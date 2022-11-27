@@ -10,7 +10,9 @@
   font-family: "BemboSemi";
   src: url(./fonts/BemboStd-SemiboldItalic.otf);
 }
-
+html, body, #root {
+  height: 100%;
+}
 .row-bg {
   overflow: hidden;
   max-width: 640px;
@@ -336,6 +338,7 @@ img#oh-dear {
 .two-btn a {
   width: 45%;
   height: 100px;
+  cursor: pointer;
 }
 .two-btn img {
   max-width: 200px;
@@ -746,6 +749,8 @@ img#explosion {
   font-size: 20px;
   font-style: italic;
   line-height: 27px;
+  position: absolute;
+  bottom: 2px;
 }
 .disabled-btn {
   opacity: 0.7;
