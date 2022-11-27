@@ -120,6 +120,7 @@ function Game({ result }: any) {
 
             </div>}
             <div className="content-win win-socks" hidden>
+                <img className='bg-only-win' src="./images/background2.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 <img id="text1" src="./images/win/text1socks.png" />
                 <div className="enter-code">

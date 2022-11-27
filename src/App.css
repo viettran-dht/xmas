@@ -518,6 +518,7 @@ img#explosion {
   animation-delay: 0.5s;
   position: relative;
   z-index: 2;
+  bottom: -22px;
 }
 .content-win .icon-win {
   width: 100%;
