@@ -58,21 +58,22 @@ function App() {
       if (loading) return
       setLoading(true);
       console.log('values', values);
+      window.scrollTo({ top: 0 });
       const newUser = await submitAPI(values)
       const { played, player, status } = newUser
       if (played) {
         changeStep('OH_DEAR')
         return
       }
+
       const result = await drawAPI(player);
       setResult({ ...result, played });
-
       setLoading(false)
       changeStep('BEFORE_START')
       setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        const body = document.getElementsByTagName('body');
-        body[0].style.overflow = 'hidden';
+     
+        // const body = document.getElementsByTagName('body');
+        // body[0].style.overflow = 'hidden';
         setStep('GAME')
       }, 3000);
      

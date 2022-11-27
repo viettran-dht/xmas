@@ -25,7 +25,7 @@ function Game({ result }: any) {
             setStep('LOSE');
             setTimeout(() => {
                 setHideLossGif(true)
-            }, 3000);
+            }, 1500);
         }
     }
     const onDrag = (e: any, dragElement: any) => {
