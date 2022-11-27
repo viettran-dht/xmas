@@ -62,7 +62,7 @@ function Register({ onRegister }: any) {
                     </div>
                     <div className="form-item position-relative">
                         <input type="tel" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." />
-                        {showValidate && !form.phone && <div className="error-message">Please input mobilme no.</div>}
+                        {showValidate && !form.phone && <div className="error-message">Please input mobile no.</div>}
                     </div>
                     <div className="form-item position-relative">
                         <input type="email" value={form.email} onChange={setFormValue('email')} id="email" placeholder="Email" />
@@ -89,7 +89,7 @@ function Register({ onRegister }: any) {
 
                     </div>
                     {!form.checked && <div className="error-message checkbox d-flex justify-content-center align-items-start position-relative">
-                        * You must agree with the Term and Conditions and<br /> Privacy Policy to continue
+                        * You must agree with the Terms and Conditions and<br /> Privacy Policy to continue
                     </div>}
                     <a className={`submit ${form.checked ? '' : 'disabled-btn'}`} onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
                 </form>
