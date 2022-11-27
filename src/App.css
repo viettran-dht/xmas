@@ -519,6 +519,7 @@ img#explosion {
   position: relative;
   z-index: 2;
   bottom: -22px;
+  display: none;
 }
 .content-win .icon-win {
   width: 100%;

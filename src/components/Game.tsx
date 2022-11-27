@@ -88,7 +88,7 @@ function Game({ result }: any) {
                     <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
                 </div>}
             {step == 'WIN' && <div className="content-win win-coctail">
-                <img className='bg-only-win' src="./images/background2.png" />
+                <img className='bg-only-win' src="./images/background3.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
 
@@ -106,7 +106,7 @@ function Game({ result }: any) {
                         placeholder="Unique code here" />
                 </div>
                 <img id="text2" src="./images/win/text2.png" />
-                <img id="hendrick" src="./images/win/hendrick.png" />
+                {/* <img id="hendrick" src="./images/win/hendrick.png" /> */}
                 <div className="icon-win">
                     <img className="ic1" src="./images/win/ic1.png" />
                     <img className="ic2" src="./images/win/ic2.png" />
@@ -120,7 +120,7 @@ function Game({ result }: any) {
 
             </div>}
             <div className="content-win win-socks" hidden>
-                <img className='bg-only-win' src="./images/background2.png" />
+                <img className='bg-only-win' src="./images/background3.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 <img id="text1" src="./images/win/text1socks.png" />
                 <div className="enter-code">
