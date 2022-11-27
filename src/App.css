@@ -166,6 +166,7 @@ html, body, #root {
   position: relative;
   max-width: 437px;
   margin: 0 auto;
+
 }
 .content-register form .form-item label {
   position: absolute;
@@ -752,7 +753,7 @@ img#explosion {
 .error-message {
   text-align: left;
   margin-top: 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   color: red;
   font-size: 20px;
   font-style: italic;
@@ -939,4 +940,14 @@ input[type="number"] {
     line-height: 16px;
   }
 
+}
+
+@media only screen and (min-width: 768px) {
+  .content-register form .form-item {
+    margin-bottom: 15px !important;
+  
+  }
+  .error-message{
+    margin-bottom: 1rem;
+  }
 }
