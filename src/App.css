@@ -956,7 +956,7 @@ input[type="number"] {
   #mechanism {
     width: 88%;
     left: 50%;
-    bottom: 230px;
+    bottom: 50px;
     transform: translateX(-50%);
   }
 }
