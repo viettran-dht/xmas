@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function Game({ result }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
-    const [step, setStep] = useState('START');
+    const [step, setStep] = useState('WIN');
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);

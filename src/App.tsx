@@ -38,7 +38,7 @@ const imgs = [
   "./images/drink.gif"
 ]
 function App() {
-  const [step, setStep] = useState('REGISTER');
+  const [step, setStep] = useState('GAME');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
   const changeStep = (newStep: string) => {
