@@ -25,12 +25,13 @@ function Game({ result }: any) {
             setStep('LOSE');
             setTimeout(() => {
                 setHideLossGif(true)
-            }, 1000);
+            }, 1500);
         }
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
-        if (dragElement.y > 120) {
+        e.preventDefault()
+        if (dragElement.y > 50) {
             setStep('ANIMATION');
             setTimeout(() => {
                 setWinLose()
@@ -38,7 +39,6 @@ function Game({ result }: any) {
         }
     }
     const closePopup = () => {
-        console.log('close popup');
         window.parent.postMessage("closePopup", "*")
     }
 
@@ -72,6 +72,11 @@ function Game({ result }: any) {
                         grid={[5, 5]}
                         scale={1}
                         onDrag={onDrag}
+                        bounds={
+                            {
+                                top:-40
+                            }
+                        }
                     >
                         <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-bot.png" />
                     </Draggable>
@@ -85,8 +90,8 @@ function Game({ result }: any) {
                 </div>
             </div>
             {step == 'WIN' && showRedeemed && <div className="redeemed-backdrop">
-                    <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
-                </div>}
+                <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
+            </div>}
             {step == 'WIN' && <div className="content-win win-coctail">
                 <img className='bg-only-win' src="./images/background3.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
@@ -95,9 +100,17 @@ function Game({ result }: any) {
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
                     <input
-                        type="number"
+                        type="tel"
                         value={coupon}
-                        onChange={(e) => setCoupon(e.target.value)}
+                        onChange={(e) => {
+                            console.log(e);
+                            const nativeEvent:any = e.nativeEvent;
+                            if (coupon.length >= 5 && nativeEvent.data) return
+                            setCoupon(e.target.value)
+                            if (e.target.value.length == 5) {
+                                checkCoupon()
+                            }
+                        }}
                         onKeyDown={(e) => {
                             if (e.keyCode == 13) {
                                 checkCoupon()
@@ -114,10 +127,6 @@ function Game({ result }: any) {
                     <img className="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
-                {/* {showRedeemed && <div className="redeemed-backdrop">
-                    <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
-                </div>} */}
-
             </div>}
             <div className="content-win win-socks" hidden>
                 <img className='bg-only-win' src="./images/background3.png" />

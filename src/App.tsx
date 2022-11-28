@@ -75,7 +75,7 @@ function App() {
         // const body = document.getElementsByTagName('body');
         // body[0].style.overflow = 'hidden';
         setStep('GAME')
-      }, 3000);
+      }, 4000);
      
       if (result.status == 'win') {
         mixpanel.track('win', result);
