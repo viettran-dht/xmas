@@ -62,7 +62,7 @@ function Register({ onRegister }: any) {
                     </div>
                     <div className="form-item position-relative">
                         <input type="tel" value={form.phone} onChange={setFormValue('phone')} placeholder="Mobile no." />
-                        {showValidate && !form.phone && <div className="error-message">Please input mobile no.</div>}
+                        {showValidate && !form.phone && <div className="error-message">Please input mobile number</div>}
                     </div>
                     <div className="form-item position-relative">
                         <input type="email" value={form.email} onChange={setFormValue('email')} id="email" placeholder="Email" />

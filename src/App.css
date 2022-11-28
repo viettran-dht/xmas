@@ -939,6 +939,12 @@ input[type="number"] {
     font-size: 11px;
     line-height: 16px;
   }
+  #mechanism {
+    width: 88%;
+    left: 50%;
+    bottom: 97px;
+    transform: translateX(-50%);
+  }
 
 }
 
