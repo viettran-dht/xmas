@@ -61,7 +61,7 @@ function Game({ result }: any) {
     }
     return (
         <div className="row-bg row-win">
-            <img className={`${step == 'WIN'? 'opacity-0' : ''}`} src="./images/game/bg-unbox.jpg" />
+            <img className={`${step == 'WIN' ? 'opacity-0' : ''}`} src="./images/game/bg-unbox.jpg" />
             <div className={`content-before ${step == 'WIN' || step == 'LOSE' ? 'hidden' : ''}`} >
                 {step == 'START' && <div className="game-cracked-group">
                     <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
@@ -95,7 +95,7 @@ function Game({ result }: any) {
                 <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
             </div>}
             {step == 'WIN' && <div className="content-win win-coctail">
-                <img className='bg-only-win is-desktop' src="./images/background3.png" />
+                <img className='bg-only-win' src="./images/background3.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
 
@@ -124,11 +124,9 @@ function Game({ result }: any) {
                     <img className="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
-                <div className='win-bot is-mobile'>
-                    <img className='win-bot-img' src="./images/win/win-top.jpg" />
-                    <img className='win-bot-img' src="./images/win/win-bot.jpg" />
-                </div>
-                
+                <img className='win-bot' src="./images/win/win-bot.jpg" />
+
+
             </div>}
             {/* <div className="content-win win-socks" hidden>
                 <img className='bg-only-win is-desktop' src="./images/background3.png" />
