@@ -748,7 +748,7 @@ img#explosion {
 .close-icon {
   height: 30px;
   position: absolute;
-  z-index: 111;
+  z-index: 999;
   right: 10px;
   top: 10px;
   background: white;
