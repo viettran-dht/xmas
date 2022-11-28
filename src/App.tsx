@@ -34,6 +34,8 @@ const imgs = [
   "./images/before-start.gif",
   "./images/background.jpg",
   "./images/lose.gif",
+  "./images/sock.gif",
+  "./images/drink.gif"
 ]
 function App() {
   const [step, setStep] = useState('REGISTER');

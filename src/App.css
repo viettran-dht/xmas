@@ -943,7 +943,7 @@ input[type="number"] {
   #mechanism {
     width: 88%;
     left: 50%;
-    bottom: 97px;
+    bottom: 50px;
     transform: translateX(-50%);
   }
 }
@@ -963,5 +963,8 @@ input[type="number"] {
   position: absolute;
   left: -1000;
   top: -1000;
+  opacity: 0;
+}
+.opacity-0{
   opacity: 0;
 }

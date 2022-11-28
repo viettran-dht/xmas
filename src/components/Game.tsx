@@ -25,23 +25,28 @@ function Game({ result }: any) {
             setStep('LOSE');
             setTimeout(() => {
                 setHideLossGif(true)
-            }, 1500);
+            }, 4000);
         }
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
         if (dragElement.y > 20) {
             setStep('ANIMATION');
-            setTimeout(() => {
+            if (result?.status == 'win') {
+                setTimeout(() => {
+                    setWinLose()
+                }, 2000);
+            } else {
                 setWinLose()
-            }, 2000);
+            }
+
         }
     }
     const closePopup = () => {
         window.parent.postMessage("closePopup", "*")
     }
 
-    const checkCoupon = async (value:string) => {
+    const checkCoupon = async (value: string) => {
         try {
             if (loading) return
             setLoading(true);
@@ -56,11 +61,8 @@ function Game({ result }: any) {
     }
     return (
         <div className="row-bg">
-
-            {/* <img src="./images/background.png" /> */}
-            <img src="./images/game/bg-unbox.jpg" />
-
-            <div className="content-before" >
+            <img className={`${step == 'WIN'? 'opacity-0' : ''}`} src="./images/game/bg-unbox.jpg" />
+            <div className={`content-before ${step == 'WIN' || step == 'LOSE' ? 'hidden' : ''}`} >
                 {step == 'START' && <div className="game-cracked-group">
                     <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
                     <img id="mechanism" src="./images/game/mechanism.png" />
@@ -73,7 +75,7 @@ function Game({ result }: any) {
                         onDrag={onDrag}
                         bounds={
                             {
-                                top:-40
+                                top: -40
                             }
                         }
                     >
@@ -81,11 +83,12 @@ function Game({ result }: any) {
                     </Draggable>
                 </div>}
                 <div className={step == 'ANIMATION' ? '' : 'hidden'}>
-                    <img id="cracked-click" src="./images/game/cracked-click.png" />
+                    {result.couponType == 'sock' ? <img src="./images/sock.gif" /> : <img src="./images/drink.gif" />}
+                    {/* <img id="cracked-click" src="./images/game/cracked-click.png" />
                     <img id="explosion2" src="./images/game/explosion2.png" />
                     <img id="sun" src="./images/game/ray.png" />
                     <img id="explosion" src="./images/game/explosion.png" />
-                    <img id="mechanism" src="./images/game/mechanism.png" />
+                    <img id="mechanism" src="./images/game/mechanism.png" /> */}
                 </div>
             </div>
             {step == 'WIN' && showRedeemed && <div className="redeemed-backdrop">
@@ -103,7 +106,7 @@ function Game({ result }: any) {
                         value={coupon}
                         onChange={(e) => {
                             console.log(e);
-                            const nativeEvent:any = e.nativeEvent;
+                            const nativeEvent: any = e.nativeEvent;
                             if (coupon.length >= 5 && nativeEvent.data) return
                             setCoupon(e.target.value)
                             if (e.target.value.length == 5) {
@@ -114,7 +117,6 @@ function Game({ result }: any) {
                         placeholder="Unique code here" />
                 </div>
                 <img id="text2" src="./images/win/text2.png" />
-                {/* <img id="hendrick" src="./images/win/hendrick.png" /> */}
                 <div className="icon-win">
                     <img className="ic1" src="./images/win/ic1.png" />
                     <img className="ic2" src="./images/win/ic2.png" />
@@ -123,7 +125,7 @@ function Game({ result }: any) {
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
             </div>}
-            <div className="content-win win-socks" hidden>
+            {/* <div className="content-win win-socks" hidden>
                 <img className='bg-only-win' src="./images/background3.png" />
                 <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
                 <img id="text1" src="./images/win/text1socks.png" />
@@ -140,7 +142,7 @@ function Game({ result }: any) {
                     <img className="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
-            </div>
+            </div> */}
 
             {step == 'LOSE' && <div className="content-lose">
                 {!hideLossGif && <img src="./images/lose.gif" />}
