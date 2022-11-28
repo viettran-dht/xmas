@@ -42,11 +42,11 @@ function Game({ result }: any) {
         window.parent.postMessage("closePopup", "*")
     }
 
-    const checkCoupon = async () => {
+    const checkCoupon = async (value:string) => {
         try {
             if (loading) return
             setLoading(true);
-            await redeemAPI(result.player, coupon)
+            await redeemAPI(result.player, value)
             setShowRedeemed(true);
             setLoading(false);
         } catch (error) {
@@ -108,14 +108,10 @@ function Game({ result }: any) {
                             if (coupon.length >= 5 && nativeEvent.data) return
                             setCoupon(e.target.value)
                             if (e.target.value.length == 5) {
-                                checkCoupon()
+                                checkCoupon(e.target.value)
                             }
                         }}
-                        onKeyDown={(e) => {
-                            if (e.keyCode == 13) {
-                                checkCoupon()
-                            }
-                        }}
+
                         placeholder="Unique code here" />
                 </div>
                 <img id="text2" src="./images/win/text2.png" />
