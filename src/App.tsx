@@ -71,12 +71,9 @@ function App() {
       setLoading(false)
       changeStep('BEFORE_START')
       setTimeout(() => {
-     
-        // const body = document.getElementsByTagName('body');
-        // body[0].style.overflow = 'hidden';
         setStep('GAME')
       }, 4000);
-     
+
       if (result.status == 'win') {
         mixpanel.track('win', result);
       } else {
@@ -94,11 +91,14 @@ function App() {
   return (
     <>
       <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
-      {step == 'GAME' && <Game result={result} />}
+      <div className={`animate ${step == 'GAME' ? '' : 'fake-hidden'}`}>
+        <Game result={result} />
+      </div>
+
       {step == 'REGISTER' && <Register onRegister={onRegister} />}
       {step == 'OH_DEAR' && <OhDear closeIframe={closeIframe} />}
       <ToastContainer />
-      {step == 'BEFORE_START' && <div className="row-bg">
+      {step == 'BEFORE_START' && <div className={`row-bg animate ${step == 'BEFORE_START' ? '' : 'fake-hidden'}`}>
         <img src="./images/before-start.gif" />
       </div>}
     </>

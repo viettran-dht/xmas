@@ -30,8 +30,7 @@ function Game({ result }: any) {
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
-        e.preventDefault()
-        if (dragElement.y > 50) {
+        if (dragElement.y > 20) {
             setStep('ANIMATION');
             setTimeout(() => {
                 setWinLose()
