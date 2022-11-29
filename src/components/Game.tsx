@@ -124,7 +124,7 @@ function Game({ result }: any) {
                     <img className="ic4" src="./images/win/ic4.png" />
                     <img className="ic5" src="./images/win/ic5.png" />
                 </div>
-                <img className='win-bot' src="./images/win/win-bot.jpg" />
+                <img className='win-bot is-mobile' src="./images/win/win-bot.jpg" />
 
 
             </div>}
