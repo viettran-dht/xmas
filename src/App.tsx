@@ -74,7 +74,7 @@ function App() {
       changeStep('BEFORE_START')
       setTimeout(() => {
         setStep('GAME')
-      }, 4000);
+      }, 5000);
 
       if (result.status == 'win') {
         mixpanel.track('win', result);

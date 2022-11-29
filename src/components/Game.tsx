@@ -6,15 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 function Game({ result }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
-    const [step, setStep] = useState('WIN');
+    const [step, setStep] = useState('START');
     const [showRedeemed, setShowRedeemed] = useState(false)
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
     const [hideLossGif, setHideLossGif] = useState(false);
     useEffect(() => {
 
-        // const body = document.getElementsByTagName('body');
-        // body[0].style.overflow = 'hidden'
     }, [])
     const setWinLose = () => {
         const body = document.getElementsByTagName('body');
@@ -30,7 +28,7 @@ function Game({ result }: any) {
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
-        if (dragElement.y > 20) {
+        if (dragElement.y > -15) {
             setStep('ANIMATION');
             if (result?.status == 'win') {
                 setTimeout(() => {

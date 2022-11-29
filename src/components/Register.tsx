@@ -91,7 +91,7 @@ function Register({ onRegister }: any) {
                     {showValidate && !form.checked && <div className="error-message checkbox d-flex justify-content-center align-items-start position-relative">
                         * You must agree with the Terms and Conditions and<br /> Privacy Policy to continue
                     </div>}
-                    <a className={`submit ${form.checked ? '' : 'disabled-btn'}`} onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
+                    <a className={`submit`} onClick={submit} ><img id="submit" alt="submit" src="./images/register/submit.png" /></a>
                 </form>
             </div>
         </div>

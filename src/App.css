@@ -582,7 +582,7 @@ img#explosion {
   margin-top: 250px;
   position: relative;
   left: 1px;
-  animation: loseAni1 0.2s linear forwards;
+  /* animation: loseAni1 0.2s linear forwards; */
 }
 .content-lose .follow {
   font-size: 26px;
@@ -592,7 +592,7 @@ img#explosion {
   font-style: italic;
   margin-top: 2rem;
   color: #000;
-  animation: loseAni2 0.2s linear forwards;
+  /* animation: loseAni2 0.2s linear forwards; */
 }
 .content-lose .follow a {
   color: #000;
@@ -605,7 +605,7 @@ img#explosion {
   margin: 80px 0;
   position: relative;
   z-index: 3;
-  animation: loseAni3 0.6s linear forwards;
+  /* animation: loseAni3 0.6s linear forwards; */
   cursor: pointer;
 }
 .content-lose #right {
