@@ -978,3 +978,22 @@ img.win-bot {
   bottom: 0;
   z-index: 1;
 }
+.menu-pdf{
+  position: absolute;
+  top: 0;
+  z-index: 9991;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.close-icon-pdf{
+  z-index: 9992;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+}
+.react-pdf__Page__textContent{
+  display: none;
+}

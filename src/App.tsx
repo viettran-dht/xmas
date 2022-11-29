@@ -1,12 +1,14 @@
+import mixpanel from 'mixpanel-browser';
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import Game from './components/Game';
-import Register from './components/Register';
-import { ToastContainer, toast } from 'react-toastify';
+import { Document, Page, pdfjs } from 'react-pdf';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { drawAPI, submitAPI } from './api';
+import './App.css';
+import Game from './components/Game';
 import OhDear from './components/OhDear';
-import mixpanel from 'mixpanel-browser';
+import Register from './components/Register';
+pdfjs.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.js";
 mixpanel.init('73d7f7c197a70633139d2560ca0f7a31', { debug: true });
 const imgs = [
   './images/game/cracked-bot.png',
@@ -41,6 +43,7 @@ function App() {
   const [step, setStep] = useState('REGISTER');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(false);
+  const [showPdf, setShowPdf] = useState(false);
   const changeStep = (newStep: string) => {
     setStep(newStep)
   }
@@ -90,19 +93,36 @@ function App() {
     console.log('close popup');
     window.parent.postMessage("closePopup", "*")
   }
+  const closePdf = () => {
+    document.getElementById('main-content')?.classList.remove('hidden')
+    setShowPdf(false)
+  }
+  const openMenu = () => {
+    document.getElementById('main-content')?.classList.add('hidden')
+    setShowPdf(true)
+  }
   return (
     <>
-      <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
-      <div className={`animate ${step == 'GAME' ? '' : 'fake-hidden'}`}>
-        <Game result={result} />
-      </div>
-
-      {step == 'REGISTER' && <Register onRegister={onRegister} />}
-      {step == 'OH_DEAR' && <OhDear closeIframe={closeIframe} />}
-      <ToastContainer />
-      {step == 'BEFORE_START' && <div className={`row-bg animate ${step == 'BEFORE_START' ? '' : 'fake-hidden'}`}>
-        <img src="./images/before-start.gif" />
+      {showPdf && <div className="menu-pdf">
+        <img onClick={closePdf} className="close-icon-pdf" src="./images/close.svg" alt="" />
+        <Document file="Hendricks_Mobile Menu_compressed.pdf" onLoadError={console.error}>
+          <Page width={400} pageNumber={1} />
+        </Document>
       </div>}
+
+      <div id="main-content">
+        <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
+        <div className={`animate ${step == 'GAME' ? '' : 'fake-hidden'}`}>
+          <Game result={result}  openMenu={openMenu}/>
+        </div>
+
+        {step == 'REGISTER' && <Register onRegister={onRegister} />}
+        {step == 'OH_DEAR' && <OhDear openMenu={openMenu} closeIframe={closeIframe} />}
+        <ToastContainer />
+        {step == 'BEFORE_START' && <div className={`row-bg animate ${step == 'BEFORE_START' ? '' : 'fake-hidden'}`}>
+          <img src="./images/before-start.gif" />
+        </div>}
+      </div>
     </>
   );
 }

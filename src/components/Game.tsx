@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Draggable from 'react-draggable';
 import { redeemAPI } from '../api';
 import { ToastContainer, toast } from 'react-toastify';
-function Game({ result }: any) {
+function Game({ result, openMenu }: any) {
     // const [showAnimation, setShowAnimation] = useState(false);
     // Step: START || ANIMATION || WIN || LOSE
     const [step, setStep] = useState('START');
@@ -11,6 +11,7 @@ function Game({ result }: any) {
     const [coupon, setCoupon] = useState('')
     const [loading, setLoading] = useState(false);
     const [hideLossGif, setHideLossGif] = useState(false);
+    const [boundTop, setBoundTop] = useState(-40);
     useEffect(() => {
 
     }, [])
@@ -28,7 +29,9 @@ function Game({ result }: any) {
     }
     const onDrag = (e: any, dragElement: any) => {
         const y = dragElement.y
-        if (dragElement.y > -15) {
+        setBoundTop(dragElement.y)
+        if (dragElement.y > 10) {
+         
             setStep('ANIMATION');
             if (result?.status == 'win') {
                 setTimeout(() => {
@@ -73,26 +76,21 @@ function Game({ result }: any) {
                         onDrag={onDrag}
                         bounds={
                             {
-                                top: -40
+                                top: boundTop
                             }
                         }
                     >
                         <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-bot.png" />
                     </Draggable>
                 </div>}
-                <div className={step == 'ANIMATION' ? '' : 'hidden'}>
+                <div className={`animate ${step == 'ANIMATION' ? '' : 'fake-hidden'}`}>
                     {result.couponType == 'sock' ? <img src="./images/sock.gif" /> : <img src="./images/drink.gif" />}
-                    {/* <img id="cracked-click" src="./images/game/cracked-click.png" />
-                    <img id="explosion2" src="./images/game/explosion2.png" />
-                    <img id="sun" src="./images/game/ray.png" />
-                    <img id="explosion" src="./images/game/explosion.png" />
-                    <img id="mechanism" src="./images/game/mechanism.png" /> */}
                 </div>
             </div>
             {step == 'WIN' && showRedeemed && <div className="redeemed-backdrop">
                 <img id="redeemed" onClick={() => closePopup()} alt="redeemed" src="./images/win/redeemed.png" />
             </div>}
-            {step == 'WIN' && <div className="content-win win-coctail">
+            { <div className={`animate content-win win-coctail ${step == 'WIN' ? '' : 'fake-hidden'}`}>
                 <img className='bg-only-win' src="./images/background3.png" />
                 {/* <img id="cocktail" className="img-gif" src="./images/game/boom.gif" /> */}
                 {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
@@ -126,35 +124,12 @@ function Game({ result }: any) {
 
 
             </div>}
-            {/* <div className="content-win win-socks" hidden>
-                <img className='bg-only-win is-desktop' src="./images/background3.png" />
-                <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
-                <img id="text1" src="./images/win/text1socks.png" />
-                <div className="enter-code">
-                    <img id="unique" src="./images/win/unique.png" />
-                    <input placeholder="Unique code here" />
-                </div>
-                <img id="text2" src="./images/win/text2.png" />
-                <img id="hendrick" src="./images/win/hendrick.png" />
-                <div className="icon-win">
-                    <img className="ic1" src="./images/win/ic1.png" />
-                    <img className="ic2" src="./images/win/ic2.png" />
-                    <img className="ic3" src="./images/win/ic3.png" />
-                    <img className="ic4" src="./images/win/ic4.png" />
-                    <img className="ic5" src="./images/win/ic5.png" />
-                </div>
-                <div className='win-bot is-mobile'>
-                    <img className='win-bot-img' src="./images/win/win-top.jpg" />
-                    <img className='win-bot-img' src="./images/win/win-bot.jpg" />
-                </div>
-            </div> */}
-
             {step == 'LOSE' && <div className="content-lose">
                 {!hideLossGif && <img src="./images/lose.gif" />}
                 <img id="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us <a href='https://www.instagram.com/hendricksginsea' target="_blank">@hendricksginsea</a><br />for more festive goodness!</p>
                 <a className="link-right">
-                    <img id="right" onClick={() => closePopup()} src="./images/lose/right.png" />
+                    <img id="right" onClick={() => openMenu()} src="./images/lose/right.png" />
                 </a>
                 <img id="put" src="./images/lose/put.png" />
             </div>
