@@ -96,7 +96,7 @@ function Game({ result }: any) {
             </div>}
             {step == 'WIN' && <div className="content-win win-coctail">
                 <img className='bg-only-win' src="./images/background3.png" />
-                <img id="cocktail" className="img-gif" src="./images/game/boom.gif" />
+                {/* <img id="cocktail" className="img-gif" src="./images/game/boom.gif" /> */}
                 {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
 
                 <div className="enter-code">

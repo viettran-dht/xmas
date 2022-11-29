@@ -460,15 +460,15 @@ img#explosion {
   margin: 267px auto 0;
   z-index: 3;
   position: relative;
-  animation: winText1 1s ease-out forwards;
-  animation-delay: 0.5s;
+  /* animation: winText1 1s ease-out forwards; */
+  /* animation-delay: 0.5s; */
 }
 .content-win .enter-code {
   position: relative;
   margin: 158px auto 0;
   max-width: 470px;
-  animation: winAni2 0.5s ease-in forwards;
-  animation-delay: 0.5s;
+  /* animation: winAni2 0.5s ease-in forwards; */
+  /* animation-delay: 0.5s; */
   z-index: 3;
 }
 .content-win .enter-code input {
@@ -510,8 +510,8 @@ img#explosion {
   max-width: 489px;
   margin: 0.125rem auto 0;
   display: block;
-  animation: winAni2 0.5s ease-in forwards;
-  animation-delay: 0.5s;
+  /* animation: winAni2 0.5s ease-in forwards; */
+  /* animation-delay: 0.5s; */
   z-index: 2;
   position: relative;
 }
@@ -530,7 +530,7 @@ img#explosion {
   z-index: 1;
   top: 0;
   left: 0;
-  animation: winIcon 15s ease both;
+  /* animation: winIcon 15s ease both; */
 }
 .icon-win img.ic1 {
   width: 14rem;
@@ -744,7 +744,7 @@ img#explosion {
 .close-icon {
   height: 30px;
   position: absolute;
-  z-index: 111;
+  z-index: 999;
   right: 10px;
   top: 10px;
   background: white;
