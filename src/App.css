@@ -440,11 +440,11 @@ img#explosion {
 /*  */
 .content-win {
   position: absolute;
-  width: calc(100% + 0px);
+  width: calc(100% + 10px);
   height: 100%;
   top: 0;
   left: 0;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 .content-win::-webkit-scrollbar {
   width: 10px;
@@ -846,10 +846,10 @@ input[type="number"] {
   }
   .content-win img#text1 {
     max-width: 80%;
-    margin: 45% auto 0;
+    margin: 30% auto 0;
   }
   .content-win .enter-code {
-    margin: 13% auto 0;
+    margin: 1% auto 0;
     max-width: 75%;
   }
   .content-win .enter-code input {
@@ -946,6 +946,11 @@ input[type="number"] {
     bottom: 60px;
     transform: translateX(-50%);
   }
+  .content-win {
+    width: calc(100% + 0px);
+    overflow-y: hidden;
+  }
+
 }
 
 @media only screen and (min-width: 768px) {
