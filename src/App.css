@@ -386,13 +386,11 @@ img#bot-flower {
   /* background-image: url(/public/images/game/bg-unbox.jpg); */
 }
 
-img#cracker {
-  width: 46%;
-  position: relative;
-  left: 27%;
-  z-index: 2;
-}
 
+.cracker-show-all {
+  top: 0px !important;
+  transition: all 1s linear;
+}
 img#cracked {
   width: 46%;
   position: absolute;
@@ -784,8 +782,22 @@ input[type="number"] {
   background-size: cover;
 }
 
+img#cracker {
+  width: 46%;
+  position: relative;
+  left: 27%;
+  z-index: 2;
+  top: -300px;
+}
 /*  */
 @media only screen and (max-width: 450px) {
+  img#cracker {
+    width: 46%;
+    position: relative;
+    left: 27%;
+    z-index: 2;
+    top: -200px;
+  }
   .content-register img#logo {
     max-width: 40%;
     margin-top: 35px;
@@ -988,12 +1000,15 @@ img.win-bot {
 .close-icon-pdf{
   z-index: 9992;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   height: 30px;
   background: white;
   border-radius: 50%;
 }
 .react-pdf__Page__textContent{
+  display: none;
+}
+.annotationLayer{
   display: none;
 }

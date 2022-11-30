@@ -31,7 +31,7 @@ function Game({ result, openMenu }: any) {
         const y = dragElement.y
         setBoundTop(dragElement.y)
         if (dragElement.y > 10) {
-         
+
             setStep('ANIMATION');
             if (result?.status == 'win') {
                 setTimeout(() => {
@@ -60,14 +60,37 @@ function Game({ result, openMenu }: any) {
         }
 
     }
+    const onClickBottle = () => {
+        document.getElementById('cracker')?.classList.add('cracker-show-all');
+        setTimeout(() => {
+            setStep('ANIMATION');
+            if (result?.status == 'win') {
+                // setTimeout(() => {
+                //     setWinLose()
+                // }, 2000);
+                if (result.type == 'sock') {
+                    setTimeout(() => {
+                        setWinLose()
+                    }, 2500);
+                } else {
+                    setTimeout(() => {
+                        setWinLose()
+                    }, 2000);
+                }
+            } else {
+                setWinLose()
+            }
+        }, 600);
+    }
     return (
         <div className="row-bg row-win">
             <img className={`${step == 'WIN' ? 'opacity-0' : ''}`} src="./images/game/bg-unbox.jpg" />
             <div className={`content-before ${step == 'WIN' || step == 'LOSE' ? 'hidden' : ''}`} >
                 {step == 'START' && <div className="game-cracked-group">
-                    <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" />
+                    <img className="handle" onClick={onClickBottle} onTouchMove={onClickBottle} draggable="false" id="cracker" src="./images/game/bottle.png" />
+                    {/* <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" /> */}
                     <img id="mechanism" src="./images/game/mechanism.png" />
-                    <Draggable
+                    {/* <Draggable
                         axis="y"
                         handle=".handle"
                         defaultPosition={{ x: 0, y: -40 }}
@@ -81,10 +104,10 @@ function Game({ result, openMenu }: any) {
                         }
                     >
                         <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-bot.png" />
-                    </Draggable>
+                    </Draggable> */}
                 </div>}
                 <div className={`animate ${step == 'ANIMATION' ? '' : 'fake-hidden'}`}>
-                    {result.couponType == 'sock' ? <img src="./images/sock.gif" /> : <img src="./images/drink.gif" />}
+                    {result.type == 'sock' ? <img src="./images/sock.gif" /> : <img src="./images/drink.gif" />}
                 </div>
             </div>
             {step == 'WIN' && showRedeemed && <div className="redeemed-backdrop">
@@ -93,7 +116,7 @@ function Game({ result, openMenu }: any) {
             { <div className={`animate content-win win-coctail ${step == 'WIN' ? '' : 'fake-hidden'}`}>
                 <img className='bg-only-win' src="./images/background3.png" />
                 {/* <img id="cocktail" className="img-gif" src="./images/game/boom.gif" /> */}
-                {result.couponType == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
+                {result.type == 'sock' ? <img id="text1" src="./images/win/text1socks.png" /> : <img id="text1" src="./images/win/text1.png" />}
 
                 <div className="enter-code">
                     <img id="unique" src="./images/win/unique.png" />
