@@ -47,9 +47,12 @@ function Register({ onRegister }: any) {
             <img alt="bg" src="./images/register/bg.png" />
             <div className="content-register">
                 <img id="logo" alt="logo" src="./images/home/logo.png" />
-                <img id="hohoho" alt="hohoho" src="./images/register/hohoho.png" />
-                <p className="you-must">You must be of legal drinking age to play.<br />
-                    Kindly fill in this form.
+                {/* <img id="hohoho" alt="hohoho" src="./images/register/hohoho.png" /> */}
+                <p className="meet-you">
+                    CURIOUS TO MEET YOU!
+                </p>
+                <p className="you-must">
+                    Kindly fill in your details to play.
                 </p>
                 <form>
                     <div className="form-item position-relative">

@@ -24,7 +24,7 @@ function Game({ result, openMenu }: any) {
             setStep('LOSE');
             setTimeout(() => {
                 setHideLossGif(true)
-            }, 4000);
+            }, 2800);
         }
     }
     const onDrag = (e: any, dragElement: any) => {
@@ -71,7 +71,7 @@ function Game({ result, openMenu }: any) {
                 if (result.type == 'sock') {
                     setTimeout(() => {
                         setWinLose()
-                    }, 2500);
+                    }, 2800);
                 } else {
                     setTimeout(() => {
                         setWinLose()

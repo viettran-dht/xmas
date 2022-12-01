@@ -32,6 +32,10 @@ body,
   width: 100%;
 }
 /*  */
+.meet-you{
+  font-size: 40px;
+  margin-top: 20px;
+}
 .content-age {
   position: absolute;
   top: 0;
@@ -162,7 +166,7 @@ body,
   line-height: 27px;
   text-align: center;
   color: #000000;
-  margin: 1.5rem 0 4rem;
+  /* margin: 1.5rem 0 4rem; */
 }
 .content-register form .form-item {
   position: relative;
@@ -371,7 +375,7 @@ img#bot-flower {
   font-style: italic;
   color: #000;
   display: block;
-  margin: 1rem auto 100px;
+  /* margin: 1rem auto 100px; */
 }
 .is-mobile {
   display: none;
@@ -809,7 +813,11 @@ img#cracker {
   .content-register .you-must {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
+  }
+  .meet-you{
+    font-size: 20px;
+    margin-top: 20px;
   }
   .content-register form .form-item {
     max-width: 76%;
@@ -963,6 +971,7 @@ img#cracker {
     overflow-y: hidden;
   }
 
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -1012,3 +1021,4 @@ img.win-bot {
 .annotationLayer{
   display: none;
 }
+

@@ -123,7 +123,7 @@ function App() {
         {step == 'REGISTER' && <Register onRegister={onRegister} />}
         {step == 'OH_DEAR' && <OhDear openMenu={openMenu} closeIframe={closeIframe} />}
         <ToastContainer />
-        {step == 'BEFORE_START' && <div className={`row-bg animate ${step == 'BEFORE_START' ? '' : 'fake-hidden'}`}>
+        {step == 'BEFORE_START' && <div style={{ touchAction: 'none', msTouchAction: 'none', msTouchSelect: 'none' }} className={`row-bg animate ${step == 'BEFORE_START' ? '' : 'fake-hidden'}`}>
           <img src="./images/before-start.gif" />
         </div>}
       </div>
