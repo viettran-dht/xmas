@@ -82,10 +82,12 @@ function Register({ onRegister }: any) {
                         }} />
                         <label htmlFor="checkbox" className='checkbox-rg'>
                             <div className='checkbox-ct'>
-                                By providing your contact details, you consent to our<br />
-                                <a href='https://www.since1887.sg/pages/terms-and-conditions' target="_blank">Terms and Conditions </a>and <a href='https://www.since1887.sg/pages/privacy-policy' target="_blank">Privacy Policy </a> and<br />
-                            agree to receive marketing updates. You can <br />
-                            unsubscribe at any time.
+                                I acknowledge that by filling out the information below<br />
+                            I consent to William Grant & Sons'<br />
+                                <a href='https://www.since1887.sg/pages/terms-and-conditions' target="_blank">Terms and Conditions </a>,
+                                 <a href='https://www.since1887.sg/pages/privacy-policy' target="_blank">Privacy Policy </a> and<br />
+                            agree to receive marketing updates.<br />
+                            I also acknowledge that photography<br />or videos of me may be taken during <br /> the event for advertising,<br />promotional and marketing purposes.
                             </div>
 
                         </label>

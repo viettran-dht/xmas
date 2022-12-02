@@ -1,6 +1,6 @@
 import mixpanel from 'mixpanel-browser';
 import React, { useEffect, useMemo, useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
+// import { Document, Page, pdfjs } from 'react-pdf';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { drawAPI, submitAPI } from './api';
@@ -8,7 +8,7 @@ import './App.css';
 import Game from './components/Game';
 import OhDear from './components/OhDear';
 import Register from './components/Register';
-pdfjs.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.js";
+// pdfjs.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.js";
 mixpanel.init('73d7f7c197a70633139d2560ca0f7a31', { debug: false });
 const imgs = [
   './images/game/cracked-bot.png',
@@ -56,7 +56,7 @@ function App() {
   }
   useEffect(() => {
     cacheImages()
-    // mixpanel.track('loadgame');
+    mixpanel.track('loadgame');
   }, [])
   const pdfWidth = useMemo(() => {
     const width = Math.min(window.screen.width, 400)
@@ -107,16 +107,13 @@ function App() {
   }
   return (
     <>
-      {showPdf && <div className="menu-pdf">
+      {showPdf && <div className="menu-pdf disable-touch">
         <img onClick={closePdf} className="close-icon-pdf" src="./images/close.svg" alt="" />
-        <Document file="Hendricks_Mobile Menu_compressed.pdf" onLoadError={console.error}>
-          <Page width={pdfWidth} pageNumber={1} />
-        </Document>
       </div>}
 
       <div id="main-content">
         <img onClick={closeIframe} className="close-icon" src="./images/close.svg" alt="" />
-        <div className={`animate ${step == 'GAME' ? '' : 'fake-hidden'}`}>
+        <div className={`animate disable-touch overflow-hidden ${step == 'GAME' ? '' : 'fake-hidden'}`}>
           <Game result={result} openMenu={openMenu} />
         </div>
 

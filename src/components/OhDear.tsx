@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 function OhDear({ closeIframe,openMenu }: any) {
-    return <div className="row-bg">
+    return <div className="row-bg disable-touch">
         {/* <img className='is-desktop' src="./images/oh-dear/oh-dear-bg.jpg" /> */}
         <img src="./images/oh-dear/oh-dear-bg-mob.jpg" />
         <div className="content-dear" >

@@ -65,9 +65,6 @@ function Game({ result, openMenu }: any) {
         setTimeout(() => {
             setStep('ANIMATION');
             if (result?.status == 'win') {
-                // setTimeout(() => {
-                //     setWinLose()
-                // }, 2000);
                 if (result.type == 'sock') {
                     setTimeout(() => {
                         setWinLose()
@@ -87,8 +84,7 @@ function Game({ result, openMenu }: any) {
             <img className={`${step == 'WIN' ? 'opacity-0' : ''}`} src="./images/game/bg-unbox.jpg" />
             <div className={`content-before ${step == 'WIN' || step == 'LOSE' ? 'hidden' : ''}`} >
                 {step == 'START' && <div className="game-cracked-group">
-                    <img className="handle" onClick={onClickBottle} onTouchMove={onClickBottle} draggable="false" id="cracker" src="./images/game/bottle.png" />
-                    {/* <img className="handle" draggable="false" id="cracker" src="./images/game/cracked-top.png" /> */}
+                    <img className="handle" style={{ touchAction: 'none', msTouchAction: 'none', msTouchSelect: 'none' }} onClick={onClickBottle} onTouchMove={onClickBottle} draggable="false" id="cracker" src="./images/game/bottle.png" />
                     <img id="mechanism" src="./images/game/mechanism.png" />
                     {/* <Draggable
                         axis="y"
@@ -147,7 +143,7 @@ function Game({ result, openMenu }: any) {
 
 
             </div>}
-            {step == 'LOSE' && <div className="content-lose">
+            {step == 'LOSE' && <div className="content-lose" style={{ touchAction: 'none', msTouchAction: 'none', msTouchSelect: 'none' }}>
                 {!hideLossGif && <img src="./images/lose.gif" />}
                 <img id="title" src="./images/lose/title.png" />
                 <p className="follow">Follow us <a href='https://www.instagram.com/hendricksginsea' target="_blank">@hendricksginsea</a><br />for more festive goodness!</p>
