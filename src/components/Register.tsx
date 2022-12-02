@@ -84,8 +84,8 @@ function Register({ onRegister }: any) {
                             <div className='checkbox-ct'>
                                 I acknowledge that by filling out the information<br /> 
                                 below I consent to William Grant & Sons' <a href='https://www.since1887.sg/pages/terms-and-conditions' target="_blank">Terms<br />
-                                and Conditions </a>, <a href='https://www.since1887.sg/pages/privacy-policy' target="_blank">Privacy Policy </a> and agree to<br /> 
-                                receive marketing updates. I also acknowledge<br />
+                                and Conditions</a>, <a href='https://www.since1887.sg/pages/privacy-policy' target="_blank">Privacy Policy </a> and agree to<br /> 
+                                receiving marketing updates. I also acknowledge<br />
                                 that photography or videos of me may be taken<br />
                                 during the event for advertising, promotional and<br />
                                 marketing purposes.
